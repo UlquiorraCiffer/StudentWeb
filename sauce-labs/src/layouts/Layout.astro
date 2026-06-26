@@ -1,0 +1,15 @@
+---
+import '../styles.css';
+
+const { class: className = '' } = Astro.props;
+
+const baseClasses = 'min-h-screen bg-[var(--surface-obsidian-canvas)] font-sans';
+const sauceClasses = 'text-[var(--color-pure-white)]';
+---
+
+<div class={`${baseClasses} ${sauceClasses} ${className}`}>  <header class="sticky top-0 z-50 bg-[var(--surface-deep-card)] border-b border-[var(--color-fog-border)]">    <nav class="max-w-[--page-max-width] mx-auto px-4 py-4 flex justify-between items-center">      <div class="text-xl font-bold text-[var(--color-neon-pulse)]">Sauce Labs</div>      <div class="hidden md:flex gap-6">        <a href="#" class="text-[var(--color-slate-text)] hover:text-[var(--color-neon-pulse)]">Platform</a>        <a href="#" class="text-[var(--color-slate-text)] hover:text-[var(--color-neon-pulse)]">Enterprise</a>        <a href="#" class="text-[var(--color-slate-text)] hover:text-[var(--color-neon-pulse)]">Documentation</a>        <a href="#" class="text-[var(--color-slate-text)] hover:text-[var(--color-neon-pulse)]">Pricing</a>      </div>      <button class="bg-[var(--color-neon-pulse)] text-[var(--color-obsidian-shell)] px-6 py-2 rounded-full font-medium">Start Free Trial</button>    </nav>  </header>
+
+  <main class="max-w-[--page-max-width] mx-auto px-4 py-12">    <slot />  </main>
+
+  <footer class="bg-[var(--color-charcoal)] py-12 mt-20">    <div class="max-w-[--page-max-width] mx-auto px-4">      <div class="flex justify-between items-center">        <div class="text-[var(--color-slate-text)]">© 2024 Sauce Labs</div>        <div class="flex gap-6">          <a href="#" class="text-[var(--color-slate-text)]">Privacy</a>          <a href="#" class="text-[var(--color-slate-text)]">Terms</a>          <a href="#" class="text-[var(--color-slate-text)]">Contact</a>        </div>      </div>    </div>  </footer>
+</div>
