@@ -1,0 +1,28 @@
+{
+  "name": "student-web",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev:steep": "astro dev --root steep",
+    "dev:labs": "astro dev --root sauce-labs",
+    "build:steep": "astro build --root steep",
+    "build:labs": "astro build --root sauce-labs",
+    "preview:steep": "astro preview --root steep",
+    "preview:labs": "astro preview --root sauce-labs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.0.3"
+  },
+  "astros": {
+    "steep": {
+      "extends": "../steep/astro.config.mjs"
+    },
+    "sauce-labs": {
+      "extends": "../sauce-labs/astro.config.mjs"
+    }
+  }
+}
