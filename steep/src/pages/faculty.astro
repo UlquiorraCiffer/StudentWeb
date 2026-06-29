@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faculty = [
+  { name: 'Smt. G. Surya Kumari', role: 'Founder & Senior Faculty', subjects: 'Mathematics, Science', experience: '15+ years', qualification: 'M.Sc., B.Ed.', initials: 'GS' },
+  { name: 'Sri. P. Ramesh', role: 'Senior Faculty', subjects: 'Social Studies, English', experience: '12+ years', qualification: 'M.A., B.Ed.', initials: 'PR' },
+  { name: 'Smt. K. Lakshmi', role: 'Faculty', subjects: 'Telugu, Hindi', experience: '10+ years', qualification: 'M.A., B.Ed.', initials: 'KL' },
+  { name: 'Sri. M. Venkatesh', role: 'Faculty', subjects: 'Mathematics, Science', experience: '8+ years', qualification: 'M.Sc., B.Ed.', initials: 'MV' },
+];
+---
+
+<Layout title="Faculty | Eklavya Tuition Classes" description="Meet our experienced faculty dedicated to student success at Eklavya Tuition Classes.">
+  <div class="space-y-16">
+
+    <section>
+      <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
+        Our Faculty
+      </h1>
+      <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne); font-size: var(--text-body-lg);">
+        Meet the dedicated educators behind Eklavya's success. Each faculty member brings years of experience and a passion for teaching.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-8">
+      {faculty.map(f => (
+        <div class="bg-[var(--surface-fog)] rounded-3xl p-8 md:p-10 flex gap-6 items-start">
+          <div class="w-16 h-16 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
+            <span class="text-[var(--color-rust)] text-xl font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
+          </div>
+          <div>
+            <h3 class="text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
+              {f.name}
+            </h3>
+            <p class="text-sm text-[var(--color-rust)] mb-3 font-medium" style="font-family: var(--font-sohne);">{f.role}</p>
+            <div class="space-y-1 text-sm text-[var(--color-graphite)]" style="font-family: var(--font-sohne);">
+              <p><span class="text-[var(--color-ink)]">Subjects:</span> {f.subjects}</p>
+              <p><span class="text-[var(--color-ink)]">Experience:</span> {f.experience}</p>
+              <p><span class="text-[var(--color-ink)]">Qualification:</span> {f.qualification}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-12 text-center">
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Our Teaching Philosophy
+      </h2>
+      <p class="text-[var(--text-body)] text-[var(--color-ink)] max-w-3xl mx-auto leading-relaxed" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+        We believe in nurturing each student's potential through patience, personalized attention, and a genuine love for teaching. Our faculty goes beyond textbooks — mentoring students to become confident, curious, and responsible individuals.
+      </p>
+    </section>
+
+  </div>
+</Layout>

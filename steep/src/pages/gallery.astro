@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const activities = [
+  { title: 'Annual Day Celebrations', desc: 'Students showcase their talents through cultural programs, skits, and performances.' },
+  { title: 'Science Exhibitions', desc: 'Hands-on projects and experiments that bring scientific concepts to life.' },
+  { title: 'Quiz Competitions', desc: 'Regular quiz events that build knowledge, confidence, and quick thinking.' },
+  { title: 'Art & Craft Sessions', desc: 'Creative activities that nurture imagination and artistic expression.' },
+  { title: 'Sports & Games', desc: 'Physical activities and indoor games for holistic development.' },
+  { title: 'Study Groups & Workshops', desc: 'Collaborative learning sessions and subject-specific workshops.' },
+];
+---
+
+<Layout title="Gallery | Eklavya Tuition Classes" description="Student life at Eklavya Tuition Classes — co-curricular activities, events, and learning environment.">
+  <div class="space-y-16">
+
+    <section>
+      <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
+        Student Life
+      </h1>
+      <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne); font-size: var(--text-body-lg);">
+        At Eklavya, learning goes beyond textbooks. We encourage students to explore, create, and grow through a variety of co-curricular activities.
+      </p>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-8">
+      {activities.map(a => (
+        <div class="bg-[var(--surface-fog)] rounded-3xl p-8 text-center">
+          <h3 class="text-[var(--text-heading-sm)] font-medium mb-3" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
+            {a.title}
+          </h3>
+          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+            {a.desc}
+          </p>
+        </div>
+      ))}
+    </section>
+
+    <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-12">
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6 text-center" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Learning Environment
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-[var(--surface-card)] rounded-2xl p-6 shadow-[var(--shadow-subtle)]">
+          <p class="text-lg font-medium text-[var(--color-ink)]" style="font-family: var(--font-signifier);">Interactive Classes</p>
+          <p class="text-sm text-[var(--color-graphite)] mt-2" style="font-family: var(--font-sohne);">Engaging lessons with active student participation</p>
+        </div>
+        <div class="bg-[var(--surface-card)] rounded-2xl p-6 shadow-[var(--shadow-subtle)]">
+          <p class="text-lg font-medium text-[var(--color-ink)]" style="font-family: var(--font-signifier);">Regular Testing</p>
+          <p class="text-sm text-[var(--color-graphite)] mt-2" style="font-family: var(--font-sohne);">Weekly tests and periodic assessments to track progress</p>
+        </div>
+        <div class="bg-[var(--surface-card)] rounded-2xl p-6 shadow-[var(--shadow-subtle)]">
+          <p class="text-lg font-medium text-[var(--color-ink)]" style="font-family: var(--font-signifier);">Parent Meetings</p>
+          <p class="text-sm text-[var(--color-graphite)] mt-2" style="font-family: var(--font-sohne);">Regular parent-teacher interactions to discuss progress</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

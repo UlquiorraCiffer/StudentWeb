@@ -1,0 +1,34 @@
+---
+const pages = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/courses', label: 'Courses' },
+  { href: '/faculty', label: 'Faculty' },
+  { href: '/facilities', label: 'Facilities' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-[var(--surface-canvas)] border-b border-[var(--color-dove)]">
+  <nav class="max-w-[var(--page-max-width)] mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="text-xl font-medium text-[var(--color-ink)]" style="font-family: var(--font-signifier);">
+      Eklavya
+    </a>
+    <div class="hidden md:flex gap-8 text-[var(--color-graphite)]" style="font-family: var(--font-sohne);">
+      {pages.map(p => (
+        <a href={p.href} class="hover:text-[var(--color-ink)] transition-colors text-sm">{p.label}</a>
+      ))}
+    </div>
+    <a href="/contact">
+      <button class="bg-[var(--color-ink)] text-[var(--color-pure-white)] px-6 py-2 rounded-full text-sm font-medium hidden md:inline-block" style="font-family: var(--font-sohne);">
+        Enquire Now
+      </button>
+    </a>
+    <button class="md:hidden text-[var(--color-ink)]" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+</header>

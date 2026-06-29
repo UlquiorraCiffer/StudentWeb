@@ -1,0 +1,53 @@
+---
+const currentYear = new Date().getFullYear();
+
+const pageLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/courses', label: 'Courses' },
+  { href: '/faculty', label: 'Faculty' },
+  { href: '/facilities', label: 'Facilities' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<footer class="bg-[var(--surface-fog)] py-16 mt-20">
+  <div class="max-w-[var(--page-max-width)] mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-12">
+      <div>
+        <h4 class="text-lg font-medium mb-4 text-[var(--color-ink)]" style="font-family: var(--font-signifier);">
+          Eklavya Tuition Classes
+        </h4>
+        <p class="text-sm text-[var(--color-graphite)] leading-relaxed" style="font-family: var(--font-sohne);">
+          Dedicated to academic excellence since 2009. Nurturing young minds from Class 1 through Class 10.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-sm font-medium mb-4 text-[var(--color-ink)] uppercase tracking-wider" style="font-family: var(--font-sohne);">
+          Quick Links
+        </h4>
+        <div class="flex flex-col gap-2">
+          {pageLinks.map(p => (
+            <a href={p.href} class="text-sm text-[var(--color-graphite)] hover:text-[var(--color-ink)] transition-colors" style="font-family: var(--font-sohne);">
+              {p.label}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h4 class="text-sm font-medium mb-4 text-[var(--color-ink)] uppercase tracking-wider" style="font-family: var(--font-sohne);">
+          Contact
+        </h4>
+        <div class="text-sm text-[var(--color-graphite)] space-y-2" style="font-family: var(--font-sohne);">
+          <p>Sita Rama bazaar, Near Chennupati Petrol Bunk</p>
+          <p>+91 9949982861</p>
+          <p>eklavya.tuition@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-[var(--color-dove)] mt-12 pt-8 text-center text-sm text-[var(--color-graphite)]" style="font-family: var(--font-sohne);">
+      &copy; {currentYear} Eklavya Tuition Classes. All rights reserved.
+    </div>
+  </div>
+</footer>

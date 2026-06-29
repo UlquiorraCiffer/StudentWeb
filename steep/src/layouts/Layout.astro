@@ -1,15 +1,27 @@
 ---
 import '../styles.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
-const { class: className = '' } = Astro.props;
-
-const baseClasses = 'min-h-screen bg-[var(--surface-canvas)] font-sans';
-const steepClasses = 'text-[var(--color-ink)]';
+const { title = 'Eklavya Tuition Classes', description = 'Dedicated to academic excellence — coaching from Class 1 through Class 10 in Telugu & English mediums.' } = Astro.props;
 ---
 
-<div class={`${baseClasses} ${steepClasses} ${className}`}>  <header class="sticky top-0 z-50 bg-[var(--surface-canvas)] border-b border-[var(--color-dove)]">    <nav class="max-w-[--page-max-width] mx-auto px-4 py-4 flex justify-between items-center">      <div class="text-xl font-bold text-[var(--color-ink)]">Steep</div>      <div class="hidden md:flex gap-6">        <a href="#" class="text-[var(--color-graphite)] hover:text-[var(--color-ink)]">Product</a>        <a href="#" class="text-[var(--color-graphite)] hover:text-[var(--color-ink)]">Resources</a>        <a href="#" class="text-[var(--color-graphite)] hover:text-[var(--color-ink)]">Customers</a>        <a href="#" class="text-[var(--color-graphite)] hover:text-[var(--color-ink)]">Pricing</a>      </div>      <button class="bg-[var(--color-ink)] text-[var(--color-pure-white)] px-6 py-2 rounded-full font-medium">Try Free</button>    </nav>  </header>
-
-  <main class="max-w-[--page-max-width] mx-auto px-4 py-12">    <slot />  </main>
-
-  <footer class="bg-[var(--surface-fog)] py-12 mt-20">    <div class="max-w-[--page-max-width] mx-auto px-4">      <div class="flex justify-between items-center">        <div class="text-[var(--color-graphite)]">© 2024 Steep</div>        <div class="flex gap-6">          <a href="#" class="text-[var(--color-graphite)]">Privacy</a>          <a href="#" class="text-[var(--color-graphite)]">Terms</a>          <a href="#" class="text-[var(--color-graphite)]">Contact</a>        </div>      </div>    </div>  </footer>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preload" href="/fonts/Signifier-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link rel="preload" href="/fonts/Sohne-Regular.otf" as="font" type="font/otf" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="min-h-screen bg-[var(--surface-canvas)] text-[var(--color-ink)] antialiased" style="font-family: var(--font-sohne);">
+  <Navbar />
+  <main class="max-w-[var(--page-max-width)] mx-auto px-6 py-12">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

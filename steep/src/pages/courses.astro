@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const subjects = [
+  { name: 'Mathematics', icon: '&#10133;', description: 'From basic arithmetic to advanced algebra — building strong quantitative skills.' },
+  { name: 'Science', icon: '&#128300;', description: 'Physics, Chemistry, and Biology made simple with practical explanations.' },
+  { name: 'Social Studies', icon: '&#127758;', description: 'History, Geography, Civics, and Economics with real-world connections.' },
+  { name: 'English', icon: '&#128214;', description: 'Grammar, literature, writing skills, and spoken English development.' },
+  { name: 'Telugu', icon: '&#128221;', description: 'Telugu language, literature, and grammar for native language proficiency.' },
+  { name: 'Hindi', icon: '&#127470;&#127475;', description: 'Hindi language instruction as second/third language option.' },
+];
+
+const grades = ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10'];
+---
+
+<Layout title="Courses | Eklavya Tuition Classes" description="Explore our courses for Classes 1-10 across all subjects in Telugu and English mediums.">
+  <div class="space-y-16">
+
+    <section>
+      <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
+        Courses
+      </h1>
+      <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne); font-size: var(--text-body-lg);">
+        Comprehensive academic coaching for Classes 1 through 10, covering all major subjects in both Telugu and English mediums.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Grades We Cover
+      </h2>
+      <div class="flex flex-wrap gap-3">
+        {grades.map(g => (
+          <span class="bg-[var(--color-apricot-wash)] text-[var(--color-rust)] px-5 py-2 rounded-full text-sm font-medium" style="font-family: var(--font-sohne);">
+            {g}
+          </span>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Subjects Offered
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {subjects.map(s => (
+          <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)]">
+            <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
+              <span class="text-[var(--color-rust)] text-xl" set:html={s.icon}></span>
+            </div>
+            <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
+              {s.name}
+            </h3>
+            <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+              {s.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-12">
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Medium of Instruction
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-[var(--surface-card)] rounded-2xl p-8 shadow-[var(--shadow-subtle)]">
+          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
+            Telugu Medium
+          </h3>
+          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+            Instruction in Telugu for students from Telugu-medium schools. All subjects taught with Telugu as the primary language of explanation.
+          </p>
+        </div>
+        <div class="bg-[var(--surface-card)] rounded-2xl p-8 shadow-[var(--shadow-subtle)]">
+          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
+            English Medium
+          </h3>
+          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+            Instruction in English for students from English-medium schools. Focus on strong English communication alongside subject mastery.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

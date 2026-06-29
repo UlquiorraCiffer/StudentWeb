@@ -1,9 +1,10 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  integrations: [react(), tailwind()],
-  site: 'https://steep.example.com',
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  site: 'https://eklavyatuition.in',
   output: 'static',
 });

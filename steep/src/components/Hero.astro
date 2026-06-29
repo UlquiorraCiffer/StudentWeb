@@ -1,0 +1,19 @@
+---
+const { title, subtitle, ctaText, ctaLink } = Astro.props;
+---
+
+<section class="relative overflow-hidden rounded-3xl" style="background: linear-gradient(135deg, #fbe1d1 0%, #fff5ed 40%, #ffffff 100%);">
+  <div class="max-w-[var(--page-max-width)] mx-auto px-6 py-24 md:py-32 text-center">
+    <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-4" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
+      {title}
+    </h1>
+    <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-2xl mx-auto leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne);">
+      {subtitle}
+    </p>
+    <a href={ctaLink}>
+      <button class="mt-10 bg-[var(--color-ink)] text-[var(--color-pure-white)] px-10 py-4 rounded-full text-base font-medium" style="font-family: var(--font-sohne);">
+        {ctaText}
+      </button>
+    </a>
+  </div>
+</section>
