@@ -164,10 +164,10 @@
     right: 32px;
   }
 }
-/* Ensure min body padding so bottom nav and float don't overlap content on mobile */
+/* Ensure min body padding so float doesn't overlap content on mobile */
 @media (max-width: 767px) {
   body {
-    padding-bottom: 112px;
+    padding-bottom: 80px;
   }
 }
 
