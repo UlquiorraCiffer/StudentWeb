@@ -14,7 +14,7 @@ const activities = [
 ---
 
 <Layout title="Gallery | Eklavya Tuition Classes" description="Student activities at Eklavya Tuition Classes — cultural programs, sports, festivals, award ceremonies, and more in Surat.">
-  <div class="space-y-16">
+  <div class="space-y-12 md:space-y-16">
 
     <section>
       <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
@@ -25,7 +25,7 @@ const activities = [
       </p>
     </section>
 
-    <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       {activities.map(a => (
         <div class="bg-[var(--surface-fog)] rounded-3xl p-8 text-center transition-transform duration-300 hover:scale-[1.02]">
           <div class="w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mx-auto mb-5">

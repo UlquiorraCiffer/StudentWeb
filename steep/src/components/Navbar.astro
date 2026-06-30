@@ -14,8 +14,9 @@ const pages = [
 
 <header class="sticky top-0 z-50 bg-[var(--surface-canvas)] border-b border-[var(--color-dove)]">
   <nav class="max-w-[var(--page-max-width)] mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="/" class="text-xl font-medium text-[var(--color-ink)]" style="font-family: var(--font-signifier);">
+    <a href="/" class="text-xl font-medium text-[var(--color-ink)] flex items-center gap-2" style="font-family: var(--font-signifier);">
       Eklavya
+      <span class="nav-ai-badge hidden sm:inline-flex">&#9889; AI-Powered</span>
     </a>
 
     <div class="hidden md:flex gap-8 text-sm" style="font-family: var(--font-sohne);">
@@ -33,12 +34,12 @@ const pages = [
     </div>
 
     <a href="/contact" class="hidden md:inline-block">
-      <button class="bg-[var(--color-ink)] text-[var(--color-pure-white)] px-6 py-2 rounded-full text-sm font-medium transition-opacity hover:opacity-85" style="font-family: var(--font-sohne);">
+      <button class="bg-[var(--color-ink)] text-[var(--color-pure-white)] px-6 py-2.5 rounded-full text-sm font-medium transition-opacity hover:opacity-85 min-h-[44px]" style="font-family: var(--font-sohne);">
         Enquire Now
       </button>
     </a>
 
-    <button id="menu-toggle" class="md:hidden text-[var(--color-ink)]" aria-label="Menu">
+    <button id="menu-toggle" class="md:hidden text-[var(--color-ink)] min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
@@ -46,21 +47,24 @@ const pages = [
   </nav>
 
   <div id="mobile-menu" class="md:hidden hidden border-t border-[var(--color-dove)] bg-[var(--surface-canvas)]">
-    <div class="px-6 py-4 flex flex-col gap-3">
+    <div class="px-6 py-4 flex flex-col gap-1">
       {pages.map(p => {
         const isActive = (p.href === '/' ? currentPath === '/' : currentPath.startsWith(p.href));
         return (
           <a
             href={p.href}
-            class={`py-2 text-sm transition-colors ${isActive ? 'text-[var(--color-ink)] font-medium' : 'text-[var(--color-graphite)] hover:text-[var(--color-ink)]'}`}
+            class={`flex items-center min-h-[48px] px-2 text-sm transition-colors ${isActive ? 'text-[var(--color-ink)] font-medium' : 'text-[var(--color-graphite)] hover:text-[var(--color-ink)]'}`}
             style="font-family: var(--font-sohne);"
           >
             {p.label}
           </a>
         );
       })}
+      <div class="flex items-center gap-2 px-2 py-2">
+        <span class="nav-ai-badge">&#9889; AI-Powered</span>
+      </div>
       <a href="/contact" class="mt-2">
-        <button class="w-full bg-[var(--color-ink)] text-[var(--color-pure-white)] px-6 py-3 rounded-full text-sm font-medium" style="font-family: var(--font-sohne);">
+        <button class="w-full bg-[var(--color-ink)] text-[var(--color-pure-white)] px-6 py-3.5 rounded-full text-sm font-medium min-h-[48px]" style="font-family: var(--font-sohne);">
           Enquire Now
         </button>
       </a>

@@ -51,7 +51,7 @@ const facilities = [
 ---
 
 <Layout title="Facilities | Eklavya Tuition Classes" description="Explore our facilities — AC classrooms, CCTV, digital boards, AI-powered teaching, and more at Eklavya Tuition Classes Surat.">
-  <div class="space-y-16">
+  <div class="space-y-12 md:space-y-16">
 
     <section>
       <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
@@ -62,7 +62,7 @@ const facilities = [
       </p>
     </section>
 
-    <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {facilities.map(f => (
         <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] border border-[var(--color-fog)] transition-transform duration-300 hover:scale-[1.02]">
           <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">

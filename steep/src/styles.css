@@ -59,28 +59,28 @@
   --font-signifier: 'Signifier', ui-serif, Georgia, 'Times New Roman', Times, serif;
   --font-sohne: 'Sohne', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  --text-caption: 14px;
+  --text-caption: clamp(12px, 2vw, 14px);
   --leading-caption: 1.5;
   --tracking-caption: -0.13px;
-  --text-body: 16px;
+  --text-body: clamp(15px, 2.2vw, 16px);
   --leading-body: 1.38;
   --tracking-body: -0.14px;
-  --text-body-lg: 18px;
+  --text-body-lg: clamp(16px, 2.5vw, 18px);
   --leading-body-lg: 1.35;
   --tracking-body-lg: -0.16px;
-  --text-subheading: 22px;
+  --text-subheading: clamp(18px, 3vw, 22px);
   --leading-subheading: 1.25;
   --tracking-subheading: -0.2px;
-  --text-heading-sm: 26px;
+  --text-heading-sm: clamp(20px, 3.5vw, 26px);
   --leading-heading-sm: 1.18;
   --tracking-heading-sm: -0.23px;
-  --text-heading: 44px;
+  --text-heading: clamp(28px, 5vw, 44px);
   --leading-heading: 1.1;
   --tracking-heading: -0.66px;
-  --text-heading-lg: 64px;
+  --text-heading-lg: clamp(36px, 6vw, 64px);
   --leading-heading-lg: 1.1;
   --tracking-heading-lg: -1.6px;
-  --text-display: 90px;
+  --text-display: clamp(36px, 8vw, 90px);
   --leading-display: 1.1;
   --tracking-display: -2.25px;
 
@@ -132,4 +132,94 @@
   --surface-warm-tint: #fbe1d1;
   --surface-cool-tint: #d3e3fc;
   --surface-ink: #17191c;
+}
+
+/* WhatsApp float button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+}
+@media (min-width: 768px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 32px;
+    right: 32px;
+  }
+}
+/* Ensure min body padding so float doesn't overlap content on mobile */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+/* AI Section dark theme */
+.ai-section {
+  background: linear-gradient(135deg, #0A1628 0%, #0D1F3C 50%, #132B4A 100%);
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 48px 32px;
+}
+.ai-section .ai-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px 24px;
+  transition: all 0.3s;
+  backdrop-filter: blur(4px);
+}
+.ai-section .ai-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(251, 225, 209, 0.3);
+  transform: translateY(-2px);
+}
+.ai-section .ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(37, 211, 102, 0.15);
+  color: #25d366;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Nav AI badge */
+.nav-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(37, 211, 102, 0.12);
+  color: #1a9e4a;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .nav-ai-badge {
+    font-size: 10px;
+    padding: 1px 8px;
+  }
 }

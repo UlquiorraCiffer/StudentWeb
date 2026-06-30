@@ -7,7 +7,7 @@ import FeatureCard from '../components/FeatureCard.astro';
 ---
 
 <Layout>
-  <div class="space-y-16">
+  <div class="space-y-12 md:space-y-16">
     <Hero
       title="Eklavya"
       subtitle="Where trust, education and future are guaranteed! Established 2015. Coaching from Class 1 to Class 12 (Commerce) in Surat with Gujarati & English mediums."
@@ -18,10 +18,10 @@ import FeatureCard from '../components/FeatureCard.astro';
     <StatsBar />
 
     <section>
-      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-12" style="font-family: var(--font-signifier); color: var(--color-ink); font-size: var(--text-heading);">
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8 md:mb-12" style="font-family: var(--font-signifier); color: var(--color-ink);">
         Why Choose Eklavya
       </h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <FeatureCard
           icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'/></svg>"
           title="Small Batch Sizes"
@@ -55,13 +55,64 @@ import FeatureCard from '../components/FeatureCard.astro';
       </div>
     </section>
 
+    <!-- AI-Powered Learning Section -->
+    <section class="ai-section">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="ai-badge">&#9889; Since 2025</span>
+      </div>
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-3 text-white" style="font-family: var(--font-signifier);">
+        Now Powered by AI &#129302;
+      </h2>
+      <p class="text-[var(--text-body-lg)] text-white/70 max-w-3xl mb-10 leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne);">
+        Eklavya Tuition Classes uses Artificial Intelligence to make learning smarter, faster, and more effective for every student.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
+        <div class="ai-card">
+          <div class="w-12 h-12 bg-[rgba(251,225,209,0.15)] rounded-full flex items-center justify-center mb-4">
+            <span class="text-[var(--color-apricot-wash)] text-xl">&#129504;</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-white" style="font-family: var(--font-signifier);">AI-Based Deep Discussion</h3>
+          <p class="text-sm text-white/60 leading-relaxed" style="font-family: var(--font-sohne);">
+            Any topic, any doubt — our AI-assisted teaching lets students explore concepts at a deeper level beyond the textbook.
+          </p>
+        </div>
+        <div class="ai-card">
+          <div class="w-12 h-12 bg-[rgba(251,225,209,0.15)] rounded-full flex items-center justify-center mb-4">
+            <span class="text-[var(--color-apricot-wash)] text-xl">&#128200;</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-white" style="font-family: var(--font-signifier);">Smart Doubt Solving</h3>
+          <p class="text-sm text-white/60 leading-relaxed" style="font-family: var(--font-sohne);">
+            Students get instant AI-powered explanations for difficult problems in Maths, Science, Accounts and more.
+          </p>
+        </div>
+        <div class="ai-card">
+          <div class="w-12 h-12 bg-[rgba(251,225,209,0.15)] rounded-full flex items-center justify-center mb-4">
+            <span class="text-[var(--color-apricot-wash)] text-xl">&#128221;</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-white" style="font-family: var(--font-signifier);">Board Exam Preparation with AI</h3>
+          <p class="text-sm text-white/60 leading-relaxed" style="font-family: var(--font-sohne);">
+            AI tools help identify weak areas and focus revision where it matters most — especially for Std 10 &amp; 12 board exams.
+          </p>
+        </div>
+        <div class="ai-card">
+          <div class="w-12 h-12 bg-[rgba(251,225,209,0.15)] rounded-full flex items-center justify-center mb-4">
+            <span class="text-[var(--color-apricot-wash)] text-xl">&#127758;</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-white" style="font-family: var(--font-signifier);">Future-Ready Education</h3>
+          <p class="text-sm text-white/60 leading-relaxed" style="font-family: var(--font-sohne);">
+            Since 2025, Eklavya has integrated AI tools in every classroom — preparing students not just for exams, but for the future.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <QuickStart />
 
-    <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-12 text-center">
-      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); color: var(--color-ink); font-size: var(--text-heading);">
+    <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-8 md:p-12 text-center">
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); color: var(--color-ink);">
         Our Promise
       </h2>
-      <blockquote class="text-[var(--text-heading-sm)] text-[var(--color-rust)] max-w-3xl mx-auto leading-relaxed italic" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm);">
+      <blockquote class="text-[var(--text-heading-sm)] text-[var(--color-rust)] max-w-3xl mx-auto leading-relaxed italic" style="font-family: var(--font-signifier);">
         "Eklavya — Where trust, education and future are guaranteed!"
       </blockquote>
     </section>
