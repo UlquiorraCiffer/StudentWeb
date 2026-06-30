@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const facilities = [
+  {
+    title: 'AC Classrooms',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'/></svg>",
+    description: 'Fully air-conditioned classrooms providing a comfortable learning environment throughout the year.'
+  },
+  {
+    title: 'CCTV Surveillance',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z'/></svg>",
+    description: 'Full CCTV coverage across all classrooms and premises for student safety and monitoring.'
+  },
+  {
+    title: 'Digital Board',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'/></svg>",
+    description: 'Every classroom is equipped with a digital board enabling interactive and engaging lessons.'
+  },
+  {
+    title: 'Fire Safety System',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z'/><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z'/></svg>",
+    description: 'Comprehensive fire safety equipment and systems installed across the premises.'
+  },
+  {
+    title: 'AI-Powered Teaching',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'/></svg>",
+    description: 'AI-powered deep discussion on any topic. Smart learning tools integrated into daily teaching.'
+  },
+  {
+    title: 'Board Exam Preparation',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4'/></svg>",
+    description: 'Weekly tests for board exam practice. Pre-provided booklets with past board papers for thorough preparation.'
+  },
+  {
+    title: 'Night Study Sessions',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'/></svg>",
+    description: 'Night study sessions available till 11 PM for focused preparation during exam seasons.'
+  },
+  {
+    title: 'Parent-Teacher Meetings',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z'/></svg>",
+    description: 'Regular Vali Meetings (parent-teacher meetings) to discuss student progress and development.'
+  },
+  {
+    title: 'Strategic Preparation',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M13 10V3L4 14h7v7l9-11h-7z'/></svg>",
+    description: 'Strategic board exam preparation with targeted study plans and expert faculty guidance.'
+  },
+];
+---
+
+<Layout title="Facilities | Eklavya Tuition Classes" description="Explore our facilities — AC classrooms, CCTV, digital boards, AI-powered teaching, and more at Eklavya Tuition Classes Surat.">
+  <div class="space-y-12 md:space-y-16">
+
+    <section>
+      <h1 class="font-normal leading-[var(--leading-display)] mb-6" style="font-family: var(--font-aeonikfono); font-size: var(--text-display); color: var(--color-pure-white);">
+        Facilities
+      </h1>
+      <p class="text-[var(--text-body-lg)] text-[var(--color-slate-text)] max-w-3xl leading-[var(--leading-body-lg)]" style="font-family: var(--font-aeonik); font-size: var(--text-body-lg);">
+        We provide a supportive and well-equipped environment that enhances the learning experience for every student.
+      </p>
+    </section>
+
+    <section class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
+      {facilities.map(f => (
+        <div class="bg-[var(--surface-deep-card)] rounded-2xl border border-[var(--color-fog-border)] shadow-[var(--shadow-md)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+          <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-mint-whisper)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
+            <span class="text-[var(--color-obsidian-shell)]" set:html={f.icon}></span>
+          </div>
+          <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-aeonikfono); color: var(--color-pure-white);">
+            {f.title}
+          </h3>
+          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-slate-text)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-aeonik);">
+            {f.description}
+          </p>
+        </div>
+      ))}
+    </section>
+
+  </div>
+</Layout>

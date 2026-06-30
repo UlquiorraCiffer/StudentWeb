@@ -1,0 +1,25 @@
+---
+const { title, subtitle, ctaText, ctaLink } = Astro.props;
+---
+
+<section class="relative overflow-hidden rounded-3xl" style="background: linear-gradient(135deg, var(--color-obsidian-shell) 0%, var(--color-deep-abyss) 40%, var(--color-pure-black) 100%);">
+  <div class="max-w-[var(--page-max-width)] mx-auto px-6 py-24 md:py-32 text-center">
+    <h1 class="font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-4" style="font-family: var(--font-aeonikfono); font-size: var(--text-display); color: var(--color-pure-white);">
+      {title}
+    </h1>
+    <p class="text-[var(--text-body-lg)] text-[var(--color-slate-text)] max-w-2xl mx-auto leading-[var(--leading-body-lg)]" style="font-family: var(--font-aeonik);">
+      {subtitle}
+    </p>
+    <div class="mt-6 flex justify-center">
+      <span class="inline-flex items-center gap-1.5 bg-[var(--color-mint-whisper)] text-[var(--color-obsidian-shell)] px-4 py-1.5 rounded-full text-sm font-medium" style="font-family: var(--font-aeonik);">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        Now AI-Powered
+      </span>
+    </div>
+    <a href={ctaLink}>
+      <button class="mt-10 bg-[var(--color-neon-pulse)] text-[var(--color-obsidian-shell)] px-10 py-4 rounded-full text-base font-medium transition-opacity hover:opacity-85" style="font-family: var(--font-aeonik); font-weight: 500;">
+        {ctaText}
+      </button>
+    </a>
+  </div>
+</section>

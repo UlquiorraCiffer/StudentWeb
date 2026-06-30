@@ -1,0 +1,23 @@
+---
+const stats = [
+  { number: '9,000+', label: 'Students Taught' },
+  { number: '18,000+', label: 'Parents Trust Us' },
+  { number: '12+', label: 'Dedicated Faculty' },
+  { number: '11+', label: 'Years of Legacy' },
+];
+---
+
+<section class="bg-[var(--surface-deep-card)] rounded-3xl p-12 border border-[var(--color-fog-border)]">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    {stats.map(s => (
+      <div>
+        <div class="text-[var(--text-heading-lg)] font-normal leading-[var(--leading-heading-lg)] text-[var(--color-neon-pulse)]" style="font-family: var(--font-aeonikfono); font-size: var(--text-heading-lg);">
+          {s.number}
+        </div>
+        <div class="text-sm text-[var(--color-slate-text)] mt-2" style="font-family: var(--font-aeonik);">
+          {s.label}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const std10Faculty = [
+  { name: 'Hardik Sir', role: 'Std 10 & 12 English Faculty', subjects: 'English', initials: 'H' },
+  { name: 'Ankit Sir', role: 'Std 10 Social Science Faculty', subjects: 'Social Science', initials: 'A' },
+  { name: 'Devendra Sir', role: 'Std 10 Science Faculty', subjects: 'Science', initials: 'D' },
+  { name: 'Sagar Sir', role: 'Std 10 Maths Faculty', subjects: 'Mathematics', initials: 'S' },
+  { name: 'Suresh Sir', role: 'Std 10 & 12 Gujarati Faculty', subjects: 'Gujarati', initials: 'SU' },
+  { name: 'Helvin Sir', role: 'Std 10 Sanskrit Faculty', subjects: 'Sanskrit', initials: 'HE' },
+];
+
+const std12Faculty = [
+  { name: 'Arthik Sir', role: 'Std 12 Commerce Faculty', subjects: 'Accounts', initials: 'AR' },
+  { name: 'Yogesh Sir', role: 'Std 12 Commerce Faculty', subjects: 'Statistics', initials: 'Y' },
+  { name: 'Deepak Sir', role: 'Std 12 Commerce Faculty', subjects: 'Economics', initials: 'DE' },
+  { name: 'Vijay Sir', role: 'Std 12 Commerce Faculty', subjects: 'B.A.', initials: 'V' },
+];
+---
+
+<Layout title="Faculty | Eklavya Tuition Classes" description="Meet our dedicated faculty at Eklavya Tuition Classes — experienced teachers for Std 10 and Std 12 Commerce.">
+  <div class="space-y-12 md:space-y-16">
+
+    <section>
+      <h1 class="font-normal leading-[var(--leading-display)] mb-6" style="font-family: var(--font-aeonikfono); font-size: var(--text-display); color: var(--color-pure-white);">
+        Our Faculty
+      </h1>
+      <p class="text-[var(--text-body-lg)] text-[var(--color-slate-text)] max-w-3xl leading-[var(--leading-body-lg)]" style="font-family: var(--font-aeonik); font-size: var(--text-body-lg);">
+        Meet the dedicated educators behind Eklavya's success. Led by Director <strong>Yogeshbhai Katariya (M.Com, B.Ed)</strong> — 11 years of experience.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-[var(--text-heading)] font-normal leading-[var(--leading-heading)] mb-8" style="font-family: var(--font-aeonikfono); font-size: var(--text-heading); color: var(--color-pure-white);">
+        Std 10 Teachers
+      </h2>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
+        {std10Faculty.map(f => (
+          <div class="bg-[var(--surface-deep-card)] rounded-3xl border border-[var(--color-fog-border)] p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
+            <div class="w-10 h-10 md:w-14 md:h-14 bg-[var(--color-mint-whisper)] rounded-full flex items-center justify-center shrink-0">
+              <span class="text-[var(--color-obsidian-shell)] text-sm md:text-lg font-bold" style="font-family: var(--font-aeonikfono);">{f.initials}</span>
+            </div>
+            <div class="grow text-center md:text-left">
+              <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-aeonikfono); color: var(--color-pure-white);">{f.name}</h3>
+              <p class="text-[11px] md:text-sm text-[var(--color-neon-pulse)] mt-1" style="font-family: var(--font-aeonik);">{f.role}</p>
+              <p class="text-[11px] md:text-sm text-[var(--color-slate-text)] mt-1" style="font-family: var(--font-aeonik);">Subject: {f.subjects}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-[var(--text-heading)] font-normal leading-[var(--leading-heading)] mb-8" style="font-family: var(--font-aeonikfono); font-size: var(--text-heading); color: var(--color-pure-white);">
+        Std 12 Commerce Teachers
+      </h2>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
+        {std12Faculty.map(f => (
+          <div class="bg-[var(--surface-deep-card)] rounded-3xl border border-[var(--color-fog-border)] p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
+            <div class="w-10 h-10 md:w-14 md:h-14 bg-[var(--color-mint-whisper)] rounded-full flex items-center justify-center shrink-0">
+              <span class="text-[var(--color-obsidian-shell)] text-sm md:text-lg font-bold" style="font-family: var(--font-aeonikfono);">{f.initials}</span>
+            </div>
+            <div class="grow text-center md:text-left">
+              <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-aeonikfono); color: var(--color-pure-white);">{f.name}</h3>
+              <p class="text-[11px] md:text-sm text-[var(--color-neon-pulse)] mt-1" style="font-family: var(--font-aeonik);">{f.role}</p>
+              <p class="text-[11px] md:text-sm text-[var(--color-slate-text)] mt-1" style="font-family: var(--font-aeonik);">Subject: {f.subjects}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[var(--surface-deep-card)] rounded-3xl border border-[var(--color-fog-border)] p-12 text-center">
+      <h2 class="text-[var(--text-heading)] font-normal leading-[var(--leading-heading)] mb-4" style="font-family: var(--font-aeonikfono); font-size: var(--text-heading); color: var(--color-pure-white);">
+        Director
+      </h2>
+      <div class="w-20 h-20 bg-[var(--color-mint-whisper)] rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-[var(--color-obsidian-shell)] text-2xl font-bold" style="font-family: var(--font-aeonikfono);">YK</span>
+      </div>
+      <h3 class="text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-aeonikfono); font-size: var(--text-heading-sm); color: var(--color-pure-white);">
+        Yogeshbhai Katariya
+      </h3>
+      <p class="text-sm text-[var(--color-neon-pulse)] font-medium mt-1" style="font-family: var(--font-aeonik);">M.Com, B.Ed — 11 Years Experience</p>
+      <p class="text-[var(--text-body)] text-[var(--color-pure-white)] max-w-2xl mx-auto mt-4 leading-relaxed" style="font-family: var(--font-aeonik); font-size: var(--text-body);">
+        "Eklavya — Where trust, education and future are guaranteed!"
+      </p>
+    </section>
+
+  </div>
+</Layout>

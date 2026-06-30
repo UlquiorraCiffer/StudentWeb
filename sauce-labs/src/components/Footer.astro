@@ -1,0 +1,52 @@
+---
+const currentYear = new Date().getFullYear();
+
+const pageLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/courses', label: 'Courses' },
+  { href: '/faculty', label: 'Faculty' },
+  { href: '/facilities', label: 'Facilities' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<footer class="bg-[var(--color-charcoal)] py-16 mt-20">
+  <div class="max-w-[var(--page-max-width)] mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-12">
+      <div>
+        <h4 class="text-lg font-medium mb-4 text-[var(--color-pure-white)]" style="font-family: var(--font-aeonikfono);">
+          Eklavya Tuition Classes
+        </h4>
+        <p class="text-sm text-[var(--color-slate-text)] leading-relaxed" style="font-family: var(--font-aeonik);">
+          Where trust, education and future are guaranteed! Established 2015. Std 1 to 12 (Commerce).
+        </p>
+      </div>
+      <div>
+        <h4 class="text-sm font-medium mb-4 text-[var(--color-pure-white)] uppercase tracking-wider" style="font-family: var(--font-aeonik);">
+          Quick Links
+        </h4>
+        <div class="flex flex-col gap-2">
+          {pageLinks.map(p => (
+            <a href={p.href} class="text-sm text-[var(--color-slate-text)] hover:text-[var(--color-neon-pulse)] transition-colors" style="font-family: var(--font-aeonik);">
+              {p.label}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div>
+        <h4 class="text-sm font-medium mb-4 text-[var(--color-pure-white)] uppercase tracking-wider" style="font-family: var(--font-aeonik);">
+          Contact
+        </h4>
+        <div class="text-sm text-[var(--color-slate-text)] space-y-2" style="font-family: var(--font-aeonik);">
+          <p>310, 3rd Floor, Angel Square, Near Silver Business Point, VIP Circle, Utran, Surat — 394105, Gujarat</p>
+          <p>09054515619 / 95865 71876</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-[var(--color-fog-border)] mt-12 pt-8 text-center text-sm text-[var(--color-slate-text)]" style="font-family: var(--font-aeonik);">
+      &copy; {currentYear} Eklavya Tuition Classes. All rights reserved.
+    </div>
+  </div>
+</footer>

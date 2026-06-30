@@ -1,17 +1,6 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
-import path from 'path';
 
 export default defineConfig({
-  integrations: [react(), tailwind()],
-  site: 'https://sauce-labs.example.com',
+  site: 'https://eklavyatuition.in',
   output: 'static',
-  vite: {
-    resolve: {
-      alias: {
-        '@': path.resolve('./src'),
-      },
-    },
-  },
 });
