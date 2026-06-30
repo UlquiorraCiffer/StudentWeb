@@ -39,44 +39,5 @@ const pages = [
       </button>
     </a>
 
-    <button id="menu-toggle" class="md:hidden text-[var(--color-ink)] min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
   </nav>
-
-  <div id="mobile-menu" class="md:hidden hidden border-t border-[var(--color-dove)] bg-[var(--surface-canvas)]">
-    <div class="px-6 py-4 flex flex-col gap-1">
-      {pages.map(p => {
-        const isActive = (p.href === '/' ? currentPath === '/' : currentPath.startsWith(p.href));
-        return (
-          <a
-            href={p.href}
-            class={`flex items-center min-h-[48px] px-2 text-sm transition-colors ${isActive ? 'text-[var(--color-ink)] font-medium' : 'text-[var(--color-graphite)] hover:text-[var(--color-ink)]'}`}
-            style="font-family: var(--font-sohne);"
-          >
-            {p.label}
-          </a>
-        );
-      })}
-      <div class="flex items-center gap-2 px-2 py-2">
-        <span class="nav-ai-badge">&#9889; AI-Powered</span>
-      </div>
-      <a href="/contact" class="mt-2">
-        <button class="w-full bg-[var(--color-ink)] text-[var(--color-pure-white)] px-6 py-3.5 rounded-full text-sm font-medium min-h-[48px]" style="font-family: var(--font-sohne);">
-          Enquire Now
-        </button>
-      </a>
-    </div>
-  </div>
 </header>
-
-<script>
-  document.getElementById('menu-toggle')?.addEventListener('click', () => {
-    const menu = document.getElementById('mobile-menu');
-    if (menu) {
-      menu.classList.toggle('hidden');
-    }
-  });
-</script>
