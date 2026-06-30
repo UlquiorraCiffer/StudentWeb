@@ -191,19 +191,4 @@
   }
 }
 
-/* Card grid mobile overrides — overrides inline font-size vars */
-@media (max-width: 767px) {
-  .card-grid-item {
-    padding: 12px !important;
-  }
-  .card-grid-item .card-icon-wrap {
-    width: 40px !important;
-    height: 40px !important;
-  }
-  .card-grid-item .card-title {
-    font-size: 13px !important;
-  }
-  .card-grid-item .card-desc {
-    font-size: 11px !important;
-  }
-}
+
