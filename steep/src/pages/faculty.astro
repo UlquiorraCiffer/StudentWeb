@@ -1,15 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const faculty = [
-  { name: 'Smt. G. Surya Kumari', role: 'Founder & Senior Faculty', subjects: 'Mathematics, Science', experience: '15+ years', qualification: 'M.Sc., B.Ed.', initials: 'GS' },
-  { name: 'Sri. P. Ramesh', role: 'Senior Faculty', subjects: 'Social Studies, English', experience: '12+ years', qualification: 'M.A., B.Ed.', initials: 'PR' },
-  { name: 'Smt. K. Lakshmi', role: 'Faculty', subjects: 'Telugu, Hindi', experience: '10+ years', qualification: 'M.A., B.Ed.', initials: 'KL' },
-  { name: 'Sri. M. Venkatesh', role: 'Faculty', subjects: 'Mathematics, Science', experience: '8+ years', qualification: 'M.Sc., B.Ed.', initials: 'MV' },
+const std10Faculty = [
+  { name: 'Hardik Sir', role: 'Std 10 & 12 English Faculty', subjects: 'English', initials: 'H' },
+  { name: 'Ankit Sir', role: 'Std 10 Social Science Faculty', subjects: 'Social Science', initials: 'A' },
+  { name: 'Devendra Sir', role: 'Std 10 Science Faculty', subjects: 'Science', initials: 'D' },
+  { name: 'Sagar Sir', role: 'Std 10 Maths Faculty', subjects: 'Mathematics', initials: 'S' },
+  { name: 'Suresh Sir', role: 'Std 10 & 12 Gujarati Faculty', subjects: 'Gujarati', initials: 'SU' },
+  { name: 'Helvin Sir', role: 'Std 10 Sanskrit Faculty', subjects: 'Sanskrit', initials: 'HE' },
+];
+
+const std12Faculty = [
+  { name: 'Arthik Sir', role: 'Std 12 Commerce Faculty', subjects: 'Accounts', initials: 'AR' },
+  { name: 'Yogesh Sir', role: 'Std 12 Commerce Faculty', subjects: 'Statistics', initials: 'Y' },
+  { name: 'Deepak Sir', role: 'Std 12 Commerce Faculty', subjects: 'Economics', initials: 'DE' },
+  { name: 'Vijay Sir', role: 'Std 12 Commerce Faculty', subjects: 'B.A.', initials: 'V' },
 ];
 ---
 
-<Layout title="Faculty | Eklavya Tuition Classes" description="Meet our experienced faculty dedicated to student success at Eklavya Tuition Classes.">
+<Layout title="Faculty | Eklavya Tuition Classes" description="Meet our dedicated faculty at Eklavya Tuition Classes — experienced teachers for Std 10 and Std 12 Commerce.">
   <div class="space-y-16">
 
     <section>
@@ -17,37 +26,63 @@ const faculty = [
         Our Faculty
       </h1>
       <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne); font-size: var(--text-body-lg);">
-        Meet the dedicated educators behind Eklavya's success. Each faculty member brings years of experience and a passion for teaching.
+        Meet the dedicated educators behind Eklavya's success. Led by Director <strong>Yogeshbhai Katariya (M.Com, B.Ed)</strong> — 11 years of experience.
       </p>
     </section>
 
-    <section class="grid md:grid-cols-2 gap-8">
-      {faculty.map(f => (
-        <div class="bg-[var(--surface-fog)] rounded-3xl p-8 md:p-10 flex gap-6 items-start transition-transform duration-300 hover:scale-[1.02]">
-          <div class="w-16 h-16 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
-            <span class="text-[var(--color-rust)] text-xl font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
-          </div>
-          <div>
-            <h3 class="text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
-              {f.name}
-            </h3>
-            <p class="text-sm text-[var(--color-rust)] mb-3 font-medium" style="font-family: var(--font-sohne);">{f.role}</p>
-            <div class="space-y-1 text-sm text-[var(--color-graphite)]" style="font-family: var(--font-sohne);">
-              <p><span class="text-[var(--color-ink)]">Subjects:</span> {f.subjects}</p>
-              <p><span class="text-[var(--color-ink)]">Experience:</span> {f.experience}</p>
-              <p><span class="text-[var(--color-ink)]">Qualification:</span> {f.qualification}</p>
+    <section>
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Std 10 Teachers
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {std10Faculty.map(f => (
+          <div class="bg-[var(--surface-fog)] rounded-3xl p-8 flex gap-5 items-start transition-transform duration-300 hover:scale-[1.02]">
+            <div class="w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
+              <span class="text-[var(--color-rust)] text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
+            </div>
+            <div>
+              <h3 class="text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">{f.name}</h3>
+              <p class="text-sm text-[var(--color-rust)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
+              <p class="text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
 
-    <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-12 text-center">
-      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
-        Our Teaching Philosophy
+    <section>
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Std 12 Commerce Teachers
       </h2>
-      <p class="text-[var(--text-body)] text-[var(--color-ink)] max-w-3xl mx-auto leading-relaxed" style="font-family: var(--font-sohne); font-size: var(--text-body);">
-        We believe in nurturing each student's potential through patience, personalized attention, and a genuine love for teaching. Our faculty goes beyond textbooks — mentoring students to become confident, curious, and responsible individuals.
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {std12Faculty.map(f => (
+          <div class="bg-[var(--surface-fog)] rounded-3xl p-8 flex gap-5 items-start transition-transform duration-300 hover:scale-[1.02]">
+            <div class="w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
+              <span class="text-[var(--color-rust)] text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
+            </div>
+            <div>
+              <h3 class="text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">{f.name}</h3>
+              <p class="text-sm text-[var(--color-rust)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
+              <p class="text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[var(--surface-fog)] rounded-3xl p-12 text-center">
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-4" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Director
+      </h2>
+      <div class="w-20 h-20 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-[var(--color-rust)] text-2xl font-bold" style="font-family: var(--font-signifier);">YK</span>
+      </div>
+      <h3 class="text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
+        Yogeshbhai Katariya
+      </h3>
+      <p class="text-sm text-[var(--color-rust)] font-medium mt-1" style="font-family: var(--font-sohne);">M.Com, B.Ed — 11 Years Experience</p>
+      <p class="text-[var(--text-body)] text-[var(--color-ink)] max-w-2xl mx-auto mt-4 leading-relaxed" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+        "Eklavya — Where trust, education and future are guaranteed!"
       </p>
     </section>
 

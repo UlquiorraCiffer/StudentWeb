@@ -1,43 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const subjects = [
-  {
-    name: 'Mathematics',
-    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z'/></svg>",
-    description: 'From basic arithmetic to advanced algebra — building strong quantitative skills.'
-  },
-  {
-    name: 'Science',
-    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z'/></svg>",
-    description: 'Physics, Chemistry, and Biology made simple with practical explanations.'
-  },
-  {
-    name: 'Social Studies',
-    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/></svg>",
-    description: 'History, Geography, Civics, and Economics with real-world connections.'
-  },
-  {
-    name: 'English',
-    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'/></svg>",
-    description: 'Grammar, literature, writing skills, and spoken English development.'
-  },
-  {
-    name: 'Telugu',
-    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z'/></svg>",
-    description: 'Telugu language, literature, and grammar for native language proficiency.'
-  },
-  {
-    name: 'Hindi',
-    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3 21h18M3 10h18m-9-9l9 4-9 4-9-4 9-4z'/></svg>",
-    description: 'Hindi language instruction as second/third language option.'
-  },
+const std10Subjects = [
+  { name: 'English', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'/></svg>", teacher: 'Hardik Sir' },
+  { name: 'Social Science', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/></svg>", teacher: 'Ankit Sir' },
+  { name: 'Science', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z'/></svg>", teacher: 'Devendra Sir' },
+  { name: 'Maths', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z'/></svg>", teacher: 'Sagar Sir' },
+  { name: 'Gujarati', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z'/></svg>", teacher: 'Suresh Sir' },
+  { name: 'Sanskrit', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 14l9-5-9-5-9 5 9 5z'/><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z'/></svg>", teacher: 'Helvin Sir' },
 ];
 
-const grades = ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10'];
+const std12Subjects = [
+  { name: 'Accounts', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z'/></svg>", teacher: 'Arthik Sir' },
+  { name: 'Statistics', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'/></svg>", teacher: 'Yogesh Sir' },
+  { name: 'Economics', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11m16-11v11M8 14v.5m8-.5v.5M8 18v.5m8-.5v.5'/></svg>", teacher: 'Deepak Sir' },
+  { name: 'B.A.', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'/></svg>", teacher: 'Vijay Sir' },
+  { name: 'English', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'/></svg>", teacher: 'Hardik Sir' },
+  { name: 'Gujarati', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z'/></svg>", teacher: 'Suresh Sir' },
+];
+
+const feeStructure = [
+  { standard: '1 to 3', fee: '₹9,000' },
+  { standard: '4 & 5', fee: '₹9,500' },
+  { standard: '6', fee: '₹10,500' },
+  { standard: '7', fee: '₹11,500' },
+  { standard: '8', fee: '₹12,500' },
+  { standard: '9', fee: '₹14,000' },
+  { standard: '10', fee: '₹19,000' },
+  { standard: '11', fee: '₹18,000' },
+  { standard: '12', fee: '₹19,500' },
+];
 ---
 
-<Layout title="Courses | Eklavya Tuition Classes" description="Explore our courses for Classes 1-10 across all subjects in Telugu and English mediums.">
+<Layout title="Courses | Eklavya Tuition Classes" description="Std 1 to 12 Commerce coaching in Surat. Gujarati & English medium. Fee structure, subjects, and special courses at Eklavya Tuition Classes.">
   <div class="space-y-16">
 
     <section>
@@ -45,64 +40,101 @@ const grades = ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6'
         Courses
       </h1>
       <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne); font-size: var(--text-body-lg);">
-        Comprehensive academic coaching for Classes 1 through 10, covering all major subjects in both Telugu and English mediums.
+        Comprehensive academic coaching for Class 1 to Class 12 (Commerce stream) in Gujarati and English mediums at Utran, Surat.
       </p>
     </section>
 
     <section>
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
-        Grades We Cover
+        Medium of Instruction
       </h2>
       <div class="flex flex-wrap gap-3">
-        {grades.map(g => (
-          <span class="bg-[var(--color-apricot-wash)] text-[var(--color-rust)] px-5 py-2 rounded-full text-sm font-medium transition-transform hover:scale-105" style="font-family: var(--font-sohne);">
-            {g}
-          </span>
+        <span class="bg-[var(--color-apricot-wash)] text-[var(--color-rust)] px-6 py-3 rounded-full text-base font-medium" style="font-family: var(--font-sohne);">
+          Gujarati Medium
+        </span>
+        <span class="bg-[var(--color-apricot-wash)] text-[var(--color-rust)] px-6 py-3 rounded-full text-base font-medium" style="font-family: var(--font-sohne);">
+          English Medium
+        </span>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Std 10 Subjects
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {std10Subjects.map(s => (
+          <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
+            <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
+              <span class="text-[var(--color-rust)]" set:html={s.icon}></span>
+            </div>
+            <h3 class="text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">{s.name}</h3>
+            <p class="text-sm text-[var(--color-rust)]" style="font-family: var(--font-sohne);">{s.teacher}</p>
+          </div>
         ))}
       </div>
     </section>
 
     <section>
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
-        Subjects Offered
+        Std 12 Commerce Subjects
       </h2>
       <div class="grid md:grid-cols-3 gap-8">
-        {subjects.map(s => (
+        {std12Subjects.map(s => (
           <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
             <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
               <span class="text-[var(--color-rust)]" set:html={s.icon}></span>
             </div>
-            <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
-              {s.name}
-            </h3>
-            <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
-              {s.description}
-            </p>
+            <h3 class="text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">{s.name}</h3>
+            <p class="text-sm text-[var(--color-rust)]" style="font-family: var(--font-sohne);">{s.teacher}</p>
           </div>
         ))}
       </div>
     </section>
 
     <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-12">
-      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
-        Medium of Instruction
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Fee Structure (Annual)
+      </h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b border-[var(--color-dove)]">
+              <th class="pb-4 text-sm font-medium text-[var(--color-ink)] uppercase tracking-wider" style="font-family: var(--font-sohne);">Standard</th>
+              <th class="pb-4 text-sm font-medium text-[var(--color-ink)] uppercase tracking-wider" style="font-family: var(--font-sohne);">Annual Fee</th>
+            </tr>
+          </thead>
+          <tbody>
+            {feeStructure.map(f => (
+              <tr class="border-b border-[var(--color-dove)] last:border-0">
+                <td class="py-4 text-[var(--color-ink)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">{f.standard}</td>
+                <td class="py-4 text-[var(--color-rust)] font-medium" style="font-family: var(--font-sohne); font-size: var(--text-body);">{f.fee}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+        Special Courses
       </h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-[var(--surface-card)] rounded-2xl p-8 shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
-            Telugu Medium
-          </h3>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
-            Instruction in Telugu for students from Telugu-medium schools. All subjects taught with Telugu as the primary language of explanation.
-          </p>
+          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Basic Maths</h3>
+          <p class="text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Std 6 to 10 | ₹800/month</p>
+          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">Strengthen your mathematical foundation with focused coaching and practice.</p>
         </div>
         <div class="bg-[var(--surface-card)] rounded-2xl p-8 shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
-            English Medium
-          </h3>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
-            Instruction in English for students from English-medium schools. Focus on strong English communication alongside subject mastery.
-          </p>
+          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Basic English</h3>
+          <p class="text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Std 6 to 10 | ₹1,000/month</p>
+          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">Improve your English grammar, vocabulary, and communication skills.</p>
+        </div>
+        <div class="bg-[var(--surface-card)] rounded-2xl p-8 shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
+          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Alphavedic Skill Development</h3>
+          <p class="text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Ages 8 to 14</p>
+          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">Abacus & Finger Math program to boost mental arithmetic and cognitive skills.</p>
         </div>
       </div>
     </section>
