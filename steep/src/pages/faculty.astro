@@ -36,14 +36,14 @@ const std12Faculty = [
       </h2>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {std10Faculty.map(f => (
-          <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex gap-5 items-start transition-transform duration-300 hover:scale-[1.02]">
-            <div class="w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
-              <span class="text-[var(--color-rust)] text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
+          <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
+            <div class="w-10 h-10 md:w-14 md:h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
+              <span class="text-[var(--color-rust)] text-sm md:text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
             </div>
-            <div>
-              <h3 class="text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">{f.name}</h3>
-              <p class="text-sm text-[var(--color-rust)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
-              <p class="text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
+            <div class="grow text-center md:text-left">
+              <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.name}</h3>
+              <p class="text-[11px] md:text-sm text-[var(--color-rust)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
+              <p class="text-[11px] md:text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
             </div>
           </div>
         ))}
@@ -56,14 +56,14 @@ const std12Faculty = [
       </h2>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {std12Faculty.map(f => (
-          <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex gap-5 items-start transition-transform duration-300 hover:scale-[1.02]">
-            <div class="w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
-              <span class="text-[var(--color-rust)] text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
+          <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
+            <div class="w-10 h-10 md:w-14 md:h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
+              <span class="text-[var(--color-rust)] text-sm md:text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
             </div>
-            <div>
-              <h3 class="text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">{f.name}</h3>
-              <p class="text-sm text-[var(--color-rust)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
-              <p class="text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
+            <div class="grow text-center md:text-left">
+              <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.name}</h3>
+              <p class="text-[11px] md:text-sm text-[var(--color-rust)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
+              <p class="text-[11px] md:text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
             </div>
           </div>
         ))}
