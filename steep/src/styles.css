@@ -171,46 +171,13 @@
   }
 }
 
-/* AI Section dark theme */
-.ai-section {
-  background: linear-gradient(135deg, #0A1628 0%, #0D1F3C 50%, #132B4A 100%);
-  color: #ffffff;
-  border-radius: 24px;
-  padding: 48px 32px;
-}
-.ai-section .ai-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 28px 24px;
-  transition: all 0.3s;
-  backdrop-filter: blur(4px);
-}
-.ai-section .ai-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(251, 225, 209, 0.3);
-  transform: translateY(-2px);
-}
-.ai-section .ai-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(37, 211, 102, 0.15);
-  color: #25d366;
-  padding: 4px 14px;
-  border-radius: 9999px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
 /* Nav AI badge */
 .nav-ai-badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: rgba(37, 211, 102, 0.12);
-  color: #1a9e4a;
+  background: var(--color-apricot-wash);
+  color: var(--color-rust);
   padding: 2px 10px;
   border-radius: 9999px;
   font-size: 11px;
