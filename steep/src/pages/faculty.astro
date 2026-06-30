@@ -23,7 +23,7 @@ const faculty = [
 
     <section class="grid md:grid-cols-2 gap-8">
       {faculty.map(f => (
-        <div class="bg-[var(--surface-fog)] rounded-3xl p-8 md:p-10 flex gap-6 items-start">
+        <div class="bg-[var(--surface-fog)] rounded-3xl p-8 md:p-10 flex gap-6 items-start transition-transform duration-300 hover:scale-[1.02]">
           <div class="w-16 h-16 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
             <span class="text-[var(--color-rust)] text-xl font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
           </div>

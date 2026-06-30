@@ -2,12 +2,36 @@
 import Layout from '../layouts/Layout.astro';
 
 const facilities = [
-  { title: 'AC Classrooms', icon: '&#9926;', description: 'Fully air-conditioned classrooms providing a comfortable learning environment throughout the year.' },
-  { title: 'Library', icon: '&#128218;', description: 'In-house library with reference books, textbooks, and supplementary reading material for all grades.' },
-  { title: 'Digital Resources', icon: '&#128187;', description: 'Smart teaching aids, digital content, and multimedia tools used alongside traditional teaching methods.' },
-  { title: 'Transport Support', icon: '&#128652;', description: 'Located in a convenient, accessible area near major landmarks for easy drop-off and pickup.' },
-  { title: 'Safe Environment', icon: '&#128737;', description: 'Secure premises with proper supervision ensuring student safety at all times.' },
-  { title: 'Clean Facilities', icon: '&#128167;', description: 'Well-maintained sanitation facilities and clean drinking water for all students.' },
+  {
+    title: 'AC Classrooms',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'/></svg>",
+    description: 'Fully air-conditioned classrooms providing a comfortable learning environment throughout the year.'
+  },
+  {
+    title: 'Library',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'/></svg>",
+    description: 'In-house library with reference books, textbooks, and supplementary reading material for all grades.'
+  },
+  {
+    title: 'Digital Resources',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'/></svg>",
+    description: 'Smart teaching aids, digital content, and multimedia tools used alongside traditional teaching methods.'
+  },
+  {
+    title: 'Transport Support',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4'/></svg>",
+    description: 'Located in a convenient, accessible area near major landmarks for easy drop-off and pickup.'
+  },
+  {
+    title: 'Safe Environment',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'/></svg>",
+    description: 'Secure premises with proper supervision ensuring student safety at all times.'
+  },
+  {
+    title: 'Clean Facilities',
+    icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z'/></svg>",
+    description: 'Well-maintained sanitation facilities and clean drinking water for all students.'
+  },
 ];
 ---
 
@@ -25,9 +49,9 @@ const facilities = [
 
     <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {facilities.map(f => (
-        <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] border border-[var(--color-fog)]">
+        <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] border border-[var(--color-fog)] transition-transform duration-300 hover:scale-[1.02]">
           <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
-            <span class="text-[var(--color-rust)] text-xl" set:html={f.icon}></span>
+            <span class="text-[var(--color-rust)]" set:html={f.icon}></span>
           </div>
           <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
             {f.title}

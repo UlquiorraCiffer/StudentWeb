@@ -18,7 +18,7 @@ const { title = 'Eklavya Tuition Classes', description = 'Dedicated to academic 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body class="min-h-screen bg-[var(--surface-canvas)] text-[var(--color-ink)] antialiased" style="font-family: var(--font-sohne);">
-  <Navbar />
+  <Navbar currentPath={Astro.url.pathname} />
   <main class="max-w-[var(--page-max-width)] mx-auto px-6 py-12">
     <slot />
   </main>

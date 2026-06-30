@@ -13,7 +13,7 @@ const steps = [
   <div class="bg-[var(--surface-warm-tint)] rounded-3xl p-10 md:p-12">
     <div class="space-y-8">
       {steps.map(s => (
-        <div class="flex items-start gap-6">
+        <div class="flex items-start gap-6 transition-transform duration-300 hover:scale-[1.01]">
           <div class="w-12 h-12 bg-[var(--color-rust)] rounded-full flex items-center justify-center text-[var(--color-pure-white)] font-bold text-lg shrink-0" style="font-family: var(--font-signifier);">
             {s.num}
           </div>

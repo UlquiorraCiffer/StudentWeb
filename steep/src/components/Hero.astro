@@ -11,7 +11,7 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
       {subtitle}
     </p>
     <a href={ctaLink}>
-      <button class="mt-10 bg-[var(--color-ink)] text-[var(--color-pure-white)] px-10 py-4 rounded-full text-base font-medium" style="font-family: var(--font-sohne);">
+      <button class="mt-10 bg-[var(--color-ink)] text-[var(--color-pure-white)] px-10 py-4 rounded-full text-base font-medium transition-opacity hover:opacity-85" style="font-family: var(--font-sohne);">
         {ctaText}
       </button>
     </a>
