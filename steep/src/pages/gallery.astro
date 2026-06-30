@@ -25,16 +25,16 @@ const activities = [
       </p>
     </section>
 
-    <section class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 lg:gap-8">
+    <section class="card-grid grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 lg:gap-8">
       {activities.map(a => (
         <div class="bg-[var(--surface-fog)] rounded-3xl text-center transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-          <div class="w-10 h-10 md:w-14 md:h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 shrink-0">
+          <div class="w-10 h-10 md:w-14 md:h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 shrink-0 card-icon">
             <span class="text-[var(--color-rust)]" set:html={a.icon}></span>
           </div>
           <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">
             {a.title}
           </h3>
-          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow" style="font-family: var(--font-sohne);">
+          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
             {a.desc}
           </p>
         </div>

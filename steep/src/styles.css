@@ -191,4 +191,19 @@
   }
 }
 
+/* Desktop card sizes — overrides Tailwind md: utilities at equal specificity */
+@media (min-width: 768px) {
+  .card-grid > * > h3 {
+    font-size: 18px !important;
+  }
+  .card-grid .card-desc {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+  .card-grid .card-icon {
+    width: 52px !important;
+    height: 52px !important;
+  }
+}
+
 

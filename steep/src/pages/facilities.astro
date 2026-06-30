@@ -62,16 +62,16 @@ const facilities = [
       </p>
     </section>
 
-    <section class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
+    <section class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
       {facilities.map(f => (
         <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] border border-[var(--color-fog)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0">
+          <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
             <span class="text-[var(--color-rust)]" set:html={f.icon}></span>
           </div>
           <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">
             {f.title}
           </h3>
-          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow" style="font-family: var(--font-sohne);">
+          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
             {f.description}
           </p>
         </div>
