@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --color-obsidian-shell: #132322;
   --color-pure-white: #ffffff;
