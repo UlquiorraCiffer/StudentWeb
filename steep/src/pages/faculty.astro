@@ -34,9 +34,9 @@ const std12Faculty = [
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Std 10 Teachers
       </h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {std10Faculty.map(f => (
-          <div class="bg-[var(--surface-fog)] rounded-3xl p-8 flex gap-5 items-start transition-transform duration-300 hover:scale-[1.02]">
+          <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex gap-5 items-start transition-transform duration-300 hover:scale-[1.02]">
             <div class="w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
               <span class="text-[var(--color-rust)] text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
             </div>
@@ -54,9 +54,9 @@ const std12Faculty = [
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Std 12 Commerce Teachers
       </h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {std12Faculty.map(f => (
-          <div class="bg-[var(--surface-fog)] rounded-3xl p-8 flex gap-5 items-start transition-transform duration-300 hover:scale-[1.02]">
+          <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex gap-5 items-start transition-transform duration-300 hover:scale-[1.02]">
             <div class="w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
               <span class="text-[var(--color-rust)] text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
             </div>

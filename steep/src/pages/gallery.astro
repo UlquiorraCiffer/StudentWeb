@@ -25,16 +25,16 @@ const activities = [
       </p>
     </section>
 
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+    <section class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 lg:gap-8">
       {activities.map(a => (
-        <div class="bg-[var(--surface-fog)] rounded-3xl p-8 text-center transition-transform duration-300 hover:scale-[1.02]">
-          <div class="w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mx-auto mb-5">
+        <div class="bg-[var(--surface-fog)] rounded-3xl text-center transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+          <div class="card-icon-wrap w-14 h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mx-auto mb-4 md:mb-5">
             <span class="text-[var(--color-rust)]" set:html={a.icon}></span>
           </div>
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-3" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
+          <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-2 md:mb-3" style="font-family: var(--font-signifier); color: var(--color-ink);">
             {a.title}
           </h3>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+          <p class="card-desc text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne);">
             {a.desc}
           </p>
         </div>

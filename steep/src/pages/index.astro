@@ -21,7 +21,7 @@ import FeatureCard from '../components/FeatureCard.astro';
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8 md:mb-12" style="font-family: var(--font-signifier); color: var(--color-ink);">
         Why Choose Eklavya
       </h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         <FeatureCard
           icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'/></svg>"
           title="Small Batch Sizes"
@@ -69,40 +69,40 @@ import FeatureCard from '../components/FeatureCard.astro';
       <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl mb-10 leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne);">
         Eklavya Tuition Classes uses Artificial Intelligence to make learning smarter, faster, and more effective for every student.
       </p>
-      <div class="grid sm:grid-cols-2 gap-6 md:gap-8">
-        <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
+      <div class="grid grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-8">
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+          <div class="card-icon-wrap w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
             <span class="text-[var(--color-rust)] text-xl">&#129504;</span>
           </div>
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">AI-Based Deep Discussion</h3>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+          <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">AI-Based Deep Discussion</h3>
+          <p class="card-desc text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne);">
             Any topic, any doubt — our AI-assisted teaching lets students explore concepts at a deeper level beyond the textbook.
           </p>
         </div>
-        <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+          <div class="card-icon-wrap w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
             <span class="text-[var(--color-rust)] text-xl">&#128200;</span>
           </div>
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Smart Doubt Solving</h3>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+          <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Smart Doubt Solving</h3>
+          <p class="card-desc text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne);">
             Students get instant AI-powered explanations for difficult problems in Maths, Science, Accounts and more.
           </p>
         </div>
-        <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+          <div class="card-icon-wrap w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
             <span class="text-[var(--color-rust)] text-xl">&#128221;</span>
           </div>
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Board Exam Preparation with AI</h3>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+          <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Board Exam Preparation with AI</h3>
+          <p class="card-desc text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne);">
             AI tools help identify weak areas and focus revision where it matters most — especially for Std 10 &amp; 12 board exams.
           </p>
         </div>
-        <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+          <div class="card-icon-wrap w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
             <span class="text-[var(--color-rust)] text-xl">&#127758;</span>
           </div>
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Future-Ready Education</h3>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">
+          <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Future-Ready Education</h3>
+          <p class="card-desc text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne);">
             Since 2025, Eklavya has integrated AI tools in every classroom — preparing students not just for exams, but for the future.
           </p>
         </div>

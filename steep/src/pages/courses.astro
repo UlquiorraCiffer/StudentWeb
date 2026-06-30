@@ -62,13 +62,13 @@ const feeStructure = [
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Std 10 Subjects
       </h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {std10Subjects.map(s => (
-          <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-            <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
+          <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+            <div class="card-icon-wrap w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
               <span class="text-[var(--color-rust)]" set:html={s.icon}></span>
             </div>
-            <h3 class="text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">{s.name}</h3>
+            <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); color: var(--color-ink);">{s.name}</h3>
             <p class="text-sm text-[var(--color-rust)]" style="font-family: var(--font-sohne);">{s.teacher}</p>
           </div>
         ))}
@@ -79,13 +79,13 @@ const feeStructure = [
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Std 12 Commerce Subjects
       </h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {std12Subjects.map(s => (
-          <div class="bg-[var(--surface-card)] p-8 rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-            <div class="w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
+          <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+            <div class="card-icon-wrap w-12 h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-4">
               <span class="text-[var(--color-rust)]" set:html={s.icon}></span>
             </div>
-            <h3 class="text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">{s.name}</h3>
+            <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); color: var(--color-ink);">{s.name}</h3>
             <p class="text-sm text-[var(--color-rust)]" style="font-family: var(--font-sohne);">{s.teacher}</p>
           </div>
         ))}
@@ -120,21 +120,21 @@ const feeStructure = [
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Special Courses
       </h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <div class="bg-[var(--surface-card)] rounded-2xl p-6 md:p-8 shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Basic Maths</h3>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+          <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Basic Maths</h3>
           <p class="text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Std 6 to 10 | ₹800/month</p>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">Strengthen your mathematical foundation with focused coaching and practice.</p>
+          <p class="card-desc text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne);">Strengthen your mathematical foundation with focused coaching and practice.</p>
         </div>
-        <div class="bg-[var(--surface-card)] rounded-2xl p-8 shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Basic English</h3>
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+          <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Basic English</h3>
           <p class="text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Std 6 to 10 | ₹1,000/month</p>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">Improve your English grammar, vocabulary, and communication skills.</p>
+          <p class="card-desc text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne);">Improve your English grammar, vocabulary, and communication skills.</p>
         </div>
-        <div class="bg-[var(--surface-card)] rounded-2xl p-8 shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02]">
-          <h3 class="text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">Alphavedic Skill Development</h3>
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] card-grid-item">
+          <h3 class="card-title text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Alphavedic Skill Development</h3>
           <p class="text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Ages 8 to 14</p>
-          <p class="text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">Abacus & Finger Math program to boost mental arithmetic and cognitive skills.</p>
+          <p class="card-desc text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)]" style="font-family: var(--font-sohne);">Abacus & Finger Math program to boost mental arithmetic and cognitive skills.</p>
         </div>
       </div>
     </section>
