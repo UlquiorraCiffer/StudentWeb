@@ -56,7 +56,7 @@ function getSubjectColor(subject: string) {
         {std10Faculty.map(f => {
           const c = getSubjectColor(f.subjects);
           return (
-            <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
+            <div class="bg-[var(--section-tint-lavender)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
               <FacultyTooltip name={f.name} role={f.role} initials={f.initials} bg={c.bg} iconColor={c.iconColor} client:load />
               <div class="grow text-center md:text-left">
                 <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.name}</h3>
@@ -77,7 +77,7 @@ function getSubjectColor(subject: string) {
         {std12Faculty.map(f => {
           const c = getSubjectColor(f.subjects);
           return (
-            <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
+            <div class="bg-[var(--section-tint-lavender)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
               <FacultyTooltip name={f.name} role={f.role} initials={f.initials} bg={c.bg} iconColor={c.iconColor} client:load />
               <div class="grow text-center md:text-left">
                 <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.name}</h3>
@@ -90,7 +90,7 @@ function getSubjectColor(subject: string) {
       </div>
     </section>
 
-    <section class="bg-[var(--surface-fog)] rounded-3xl p-12 text-center">
+    <section class="bg-[var(--section-tint-mint)] rounded-3xl p-12 text-center">
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-4" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Director
       </h2>

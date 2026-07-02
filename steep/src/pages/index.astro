@@ -66,7 +66,7 @@ const aiFeatures = [
       </div>
     </section>
 
-    <section class="bg-[var(--surface-fog)] rounded-3xl p-8 md:p-12">
+    <section class="bg-[var(--section-tint-saffron)] rounded-3xl p-8 md:p-12">
       <div class="flex items-center gap-2 mb-2">
         <span class="bg-[var(--color-card-mint)] text-[var(--color-accent-green)] px-4 py-1.5 rounded-full text-sm font-medium inline-flex items-center gap-1.5" style="font-family: var(--font-sohne);">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
@@ -81,7 +81,7 @@ const aiFeatures = [
       </p>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-8">
         {aiFeatures.map((f, i) => (
-          <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+          <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${aiAccents[i].bg} 10%, white); border-top: 3px solid ${aiAccents[i].bg};`}>
             <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon text-xl" style={`background: ${aiAccents[i].bg}; color: ${aiAccents[i].iconColor};`}>
               <span set:html={f.emoji}></span>
             </div>
@@ -96,7 +96,7 @@ const aiFeatures = [
 
     <QuickStart />
 
-    <section class="bg-[var(--surface-fog)] rounded-3xl p-8 md:p-12 text-center">
+    <section class="bg-[var(--section-tint-lavender)] rounded-3xl p-8 md:p-12 text-center">
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); color: var(--color-ink);">
         Our Promise
       </h2>
