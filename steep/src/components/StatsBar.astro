@@ -1,9 +1,9 @@
 ---
 const stats = [
-  { number: '9,000+', label: 'Students Taught', color: 'var(--color-highlight-yellow)' },
-  { number: '18,000+', label: 'Parents Trust Us', color: 'var(--color-accent-green)' },
-  { number: '12+', label: 'Dedicated Faculty', color: 'var(--color-midnight-ink)' },
-  { number: '11+', label: 'Years of Legacy', color: 'var(--color-highlight-yellow)' },
+  { number: '9,000+', label: 'Students Taught' },
+  { number: '18,000+', label: 'Parents Trust Us' },
+  { number: '12+', label: 'Dedicated Faculty' },
+  { number: '11+', label: 'Years of Legacy' },
 ];
 ---
 
@@ -11,7 +11,7 @@ const stats = [
   <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
     {stats.map(s => (
       <div>
-        <div class="text-[var(--text-heading-lg)] font-serif font-normal leading-[var(--leading-heading-lg)]" style={`font-family: var(--font-signifier); font-size: var(--text-heading-lg); color: ${s.color};`}>
+        <div class="text-[var(--text-heading-lg)] font-serif font-normal leading-[var(--leading-heading-lg)]" style="font-family: var(--font-signifier); font-size: var(--text-heading-lg); color: var(--color-midnight-ink);">
           {s.number}
         </div>
         <div class="text-sm text-[var(--color-graphite)] mt-2" style="font-family: var(--font-sohne);">
