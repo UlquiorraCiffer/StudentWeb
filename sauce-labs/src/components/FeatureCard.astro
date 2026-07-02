@@ -1,15 +1,15 @@
 ---
-const { icon, title, description } = Astro.props;
+const { icon, title, description, large } = Astro.props;
 ---
 
-<div class="bg-[var(--surface-deep-card)] rounded-2xl border border-[var(--color-fog-border)] shadow-[var(--shadow-md)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-  <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-mint-whisper)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
+<div class="glass-card flex flex-col p-5 md:p-6 lg:p-8">
+  <div class="w-11 h-11 md:w-12 md:h-12 bg-[var(--color-mint-whisper)] rounded-full flex items-center justify-center mb-4 shrink-0 border border-[rgba(61,220,145,0.3)]">
     <span class="text-[var(--color-obsidian-shell)]" set:html={icon}></span>
   </div>
-  <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-aeonikfono); color: var(--color-pure-white);">
+  <h3 class="text-[15px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-aeonikfono); color: var(--color-pure-white);">
     {title}
   </h3>
-  <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-slate-text)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-aeonik);">
+  <p class="text-[13px] md:text-[var(--text-body)] text-[var(--color-slate-text)] leading-[var(--leading-body)] grow" style="font-family: var(--font-aeonik);">
     {description}
   </p>
 </div>

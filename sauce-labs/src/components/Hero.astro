@@ -2,24 +2,78 @@
 const { title, subtitle, ctaText, ctaLink } = Astro.props;
 ---
 
-<section class="relative overflow-hidden rounded-3xl" style="background: linear-gradient(135deg, var(--color-obsidian-shell) 0%, var(--color-deep-abyss) 40%, var(--color-pure-black) 100%);">
-  <div class="max-w-[var(--page-max-width)] mx-auto px-6 py-24 md:py-32 text-center">
-    <h1 class="font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-4" style="font-family: var(--font-aeonikfono); font-size: var(--text-display); color: var(--color-pure-white);">
-      {title}
-    </h1>
-    <p class="text-[var(--text-body-lg)] text-[var(--color-slate-text)] max-w-2xl mx-auto leading-[var(--leading-body-lg)]" style="font-family: var(--font-aeonik);">
-      {subtitle}
-    </p>
-    <div class="mt-6 flex justify-center">
-      <span class="inline-flex items-center gap-1.5 bg-[var(--color-mint-whisper)] text-[var(--color-obsidian-shell)] px-4 py-1.5 rounded-full text-sm font-medium" style="font-family: var(--font-aeonik);">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        Now AI-Powered
-      </span>
+<section class="relative overflow-hidden bg-grid-glow">
+  <div class="max-w-[var(--page-max-width)] mx-auto px-6 py-16 md:py-24">
+    <div class="grid md:grid-cols-5 gap-8 md:gap-16 items-center">
+      <!-- Left: Text content (60%) -->
+      <div class="md:col-span-3">
+        <span class="inline-flex items-center gap-1.5 bg-[var(--color-mint-whisper)] text-[var(--color-obsidian-shell)] px-4 py-1.5 rounded-full text-sm font-medium mb-6" style="font-family: var(--font-aeonik);">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Since 2015 — Now AI-Powered
+        </span>
+
+        <h1 class="font-medium leading-[var(--leading-display)] mb-4" style="font-family: var(--font-aeonikfono); font-size: var(--text-display); color: var(--color-pure-white);">
+          {title}
+        </h1>
+
+        <p class="text-[var(--text-body-lg)] text-[var(--color-slate-text)] max-w-xl leading-[var(--leading-body-lg)] mb-8" style="font-family: var(--font-aeonik);">
+          {subtitle}
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href={ctaLink}>
+            <button class="btn-neon px-8 py-4 text-base min-h-[52px]">&#8594; {ctaText}</button>
+          </a>
+          <a href="/courses">
+            <button class="btn-neon-ghost px-8 py-4 text-base min-h-[52px]">Explore Courses</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Stat Card (40%) -->
+      <div class="md:col-span-2">
+        <div class="bg-[var(--surface-deep-card)] rounded-[60px] border border-[rgba(61,220,145,0.25)] p-8 shadow-[var(--shadow-glow)]">
+          <p class="text-xs text-[var(--color-slate-text)] uppercase tracking-widest mb-6" style="font-family: var(--font-aeonik);">At a Glance</p>
+          <div class="space-y-5">
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[rgba(61,220,145,0.1)] rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-[var(--color-neon-pulse)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              </div>
+              <div>
+                <div class="text-2xl font-medium text-[var(--color-neon-pulse)]" style="font-family: var(--font-aeonikfono);">9,000+</div>
+                <div class="text-xs text-[var(--color-slate-text)]" style="font-family: var(--font-aeonik);">Students Taught</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[rgba(61,220,145,0.1)] rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-[var(--color-neon-pulse)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+              </div>
+              <div>
+                <div class="text-2xl font-medium text-[var(--color-neon-pulse)]" style="font-family: var(--font-aeonikfono);">18,000+</div>
+                <div class="text-xs text-[var(--color-slate-text)]" style="font-family: var(--font-aeonik);">Parents Trust Us</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[rgba(61,220,145,0.1)] rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-[var(--color-neon-pulse)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+              </div>
+              <div>
+                <div class="text-2xl font-medium text-[var(--color-neon-pulse)]" style="font-family: var(--font-aeonikfono);">12+</div>
+                <div class="text-xs text-[var(--color-slate-text)]" style="font-family: var(--font-aeonik);">Dedicated Faculty</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-[rgba(61,220,145,0.1)] rounded-full flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-[var(--color-neon-pulse)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <div class="text-2xl font-medium text-[var(--color-neon-pulse)]" style="font-family: var(--font-aeonikfono);">11+</div>
+                <div class="text-xs text-[var(--color-slate-text)]" style="font-family: var(--font-aeonik);">Years of Legacy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <a href={ctaLink}>
-      <button class="mt-10 bg-[var(--color-neon-pulse)] text-[var(--color-obsidian-shell)] px-10 py-4 rounded-full text-base font-medium transition-opacity hover:opacity-85" style="font-family: var(--font-aeonik); font-weight: 500;">
-        {ctaText}
-      </button>
-    </a>
   </div>
 </section>

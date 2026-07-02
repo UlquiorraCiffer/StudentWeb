@@ -12,22 +12,25 @@ const pageLinks = [
 ];
 ---
 
-<footer class="bg-[var(--color-charcoal)] py-16 mt-20">
+<footer class="bg-[var(--color-charcoal)] border-t border-[rgba(61,220,145,0.1)] py-14 md:py-20 mt-16 md:mt-24">
   <div class="max-w-[var(--page-max-width)] mx-auto px-6">
-    <div class="grid md:grid-cols-3 gap-12">
-      <div>
-        <h4 class="text-lg font-medium mb-4 text-[var(--color-pure-white)]" style="font-family: var(--font-aeonikfono);">
-          Eklavya Tuition Classes
+    <div class="grid md:grid-cols-4 gap-10 md:gap-12">
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <h4 class="text-lg font-medium mb-3 text-[var(--color-pure-white)] flex items-center gap-2" style="font-family: var(--font-aeonikfono);">
+          Eklavya
+          <span class="bg-[var(--color-neon-pulse)] text-[var(--color-obsidian-shell)] text-[10px] font-semibold px-2.5 py-0.5 rounded-full">ETC</span>
         </h4>
-        <p class="text-sm text-[var(--color-slate-text)] leading-relaxed" style="font-family: var(--font-aeonik);">
+        <p class="text-sm text-[var(--color-slate-text)] leading-relaxed max-w-xs" style="font-family: var(--font-aeonik);">
           Where trust, education and future are guaranteed! Established 2015. Std 1 to 12 (Commerce).
         </p>
       </div>
+      <!-- Quick Links -->
       <div>
-        <h4 class="text-sm font-medium mb-4 text-[var(--color-pure-white)] uppercase tracking-wider" style="font-family: var(--font-aeonik);">
+        <h4 class="text-xs font-semibold mb-4 text-[var(--color-neon-pulse)] uppercase tracking-widest" style="font-family: var(--font-aeonik);">
           Quick Links
         </h4>
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2.5">
           {pageLinks.map(p => (
             <a href={p.href} class="text-sm text-[var(--color-slate-text)] hover:text-[var(--color-neon-pulse)] transition-colors" style="font-family: var(--font-aeonik);">
               {p.label}
@@ -35,18 +38,40 @@ const pageLinks = [
           ))}
         </div>
       </div>
+      <!-- Contact -->
       <div>
-        <h4 class="text-sm font-medium mb-4 text-[var(--color-pure-white)] uppercase tracking-wider" style="font-family: var(--font-aeonik);">
+        <h4 class="text-xs font-semibold mb-4 text-[var(--color-neon-pulse)] uppercase tracking-widest" style="font-family: var(--font-aeonik);">
           Contact
         </h4>
-        <div class="text-sm text-[var(--color-slate-text)] space-y-2" style="font-family: var(--font-aeonik);">
-          <p>310, 3rd Floor, Angel Square, Near Silver Business Point, VIP Circle, Utran, Surat — 394105, Gujarat</p>
-          <p>09054515619 / 95865 71876</p>
+        <div class="text-sm text-[var(--color-slate-text)] space-y-2.5" style="font-family: var(--font-aeonik);">
+          <p>310, 3rd Floor, Angel Square,<br />Near Silver Business Point, VIP Circle,<br />Utran, Surat — 394105, Gujarat</p>
+          <div>
+            <a href="tel:+919054515619" class="hover:text-[var(--color-neon-pulse)] transition-colors">09054515619</a><br />
+            <a href="tel:+919586571876" class="hover:text-[var(--color-neon-pulse)] transition-colors">95865 71876</a>
+          </div>
         </div>
       </div>
+      <!-- CTA -->
+      <div class="flex flex-col items-start">
+        <h4 class="text-xs font-semibold mb-4 text-[var(--color-neon-pulse)] uppercase tracking-widest" style="font-family: var(--font-aeonik);">
+          Get Started
+        </h4>
+        <p class="text-sm text-[var(--color-slate-text)] mb-4" style="font-family: var(--font-aeonik);">
+          Ready to enrol your child?
+        </p>
+        <a href="/contact">
+          <button class="btn-neon px-6 py-3 text-sm">Enquire Now &#8594;</button>
+        </a>
+      </div>
     </div>
-    <div class="border-t border-[var(--color-fog-border)] mt-12 pt-8 text-center text-sm text-[var(--color-slate-text)]" style="font-family: var(--font-aeonik);">
-      &copy; {currentYear} Eklavya Tuition Classes. All rights reserved.
+    <div class="border-t border-[rgba(61,220,145,0.1)] mt-10 md:mt-14 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-[var(--color-slate-text)]" style="font-family: var(--font-aeonik);">
+        &copy; {currentYear} Eklavya Tuition Classes. All rights reserved.
+      </p>
+      <div class="flex items-center gap-1">
+        <span class="w-2 h-2 rounded-full bg-[var(--color-neon-pulse)]"></span>
+        <span class="text-xs text-[var(--color-slate-text)]" style="font-family: var(--font-aeonik);">AI-Powered Learning Since 2025</span>
+      </div>
     </div>
   </div>
 </footer>
