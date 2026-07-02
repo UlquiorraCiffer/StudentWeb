@@ -1,16 +1,10 @@
 ---
 import TextReveal from './TextReveal';
-import BeamsWrapper from './BeamsWrapper';
-import Eyebrow from './Eyebrow.astro';
-import HeroFloaters from './HeroFloaters';
 const { title, subtitle, ctaText, ctaLink } = Astro.props;
 ---
 
 <section class="relative overflow-hidden rounded-3xl" style="background: linear-gradient(145deg, #fef3c8 0%, #fff8ef 40%, #fff8ef 60%, #fce0ef 100%);">
-  <BeamsWrapper client:load />
-  <HeroFloaters client:load />
   <div class="relative z-10 max-w-[var(--page-max-width)] mx-auto px-6 py-24 md:py-32 text-center">
-    <Eyebrow text="// ESTABLISHED 2015" class="justify-center" />
     <div class="relative">
       <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--color-card-saffron) 25%, transparent) 0%, transparent 60%);"></div>
       <div class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-4 relative" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-midnight-ink);">
