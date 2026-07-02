@@ -49,11 +49,11 @@
 }
 
 :root {
-  --color-ink: #17191c;
+  --color-ink: #000000;
   --color-pure-white: #ffffff;
   --color-fog: #f5f5f5;
-  --color-ash: #4c4c4c;
-  --color-graphite: #555;
+  --color-ash: #000000;
+  --color-graphite: #000000;
   --color-dove: #a3a6af;
   --color-slate: #8b8c8d;
   --color-obsidian: #000000;
