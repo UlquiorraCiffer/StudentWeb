@@ -3,14 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 
 const activityColors = [
-  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)', mixPct: '40%' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)', mixPct: '25%' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)', mixPct: '10%' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)', mixPct: '40%' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)', mixPct: '25%' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
 ];
 
 const activities = [
@@ -40,7 +40,7 @@ const activities = [
 
     <section class="card-grid grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-6 lg:gap-8">
       {activities.map((a, i) => (
-        <div class="rounded-2xl transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${activityColors[i].bg} 25%, white); border-top: 3px solid ${activityColors[i].bg};`}>
+        <div class="rounded-2xl transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${activityColors[i].bg} ${activityColors[i].mixPct}, white); border-top: 3px solid ${activityColors[i].bg};`}>
           <div class="w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 shrink-0 card-icon" style={`background: ${activityColors[i].bg};`}>
             <span style={`color: ${activityColors[i].iconColor};`} set:html={a.icon}></span>
           </div>

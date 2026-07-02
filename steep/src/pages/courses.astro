@@ -4,21 +4,21 @@ import Eyebrow from '../components/Eyebrow.astro';
 import HaloHeading from '../components/HaloHeading.astro';
 
 const std10SubjectColors = [
-  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)', mixPct: '40%' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)', mixPct: '25%' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)', mixPct: '10%' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)', mixPct: '40%' },
 ];
 
 const std12SubjectColors = [
-  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)', mixPct: '25%' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)', mixPct: '40%' },
+  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)', mixPct: '10%' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
 ];
 
 const std10Subjects = [
@@ -87,7 +87,7 @@ const feeStructure = [
       </h2>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {std10Subjects.map((s, i) => (
-            <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${std10SubjectColors[i].bg} 25%, white); border-top: 3px solid ${std10SubjectColors[i].bg};`}>
+            <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${std10SubjectColors[i].bg} ${std10SubjectColors[i].mixPct}, white); border-top: 3px solid ${std10SubjectColors[i].bg};`}>
             <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon" style={`background: ${std10SubjectColors[i].bg};`}>
               <span style={`color: ${std10SubjectColors[i].iconColor};`} set:html={s.icon}></span>
             </div>
@@ -105,7 +105,7 @@ const feeStructure = [
       </h2>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {std12Subjects.map((s, i) => (
-          <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${std12SubjectColors[i].bg} 25%, white); border-top: 3px solid ${std12SubjectColors[i].bg};`}>
+          <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${std12SubjectColors[i].bg} ${std12SubjectColors[i].mixPct}, white); border-top: 3px solid ${std12SubjectColors[i].bg};`}>
             <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon" style={`background: ${std12SubjectColors[i].bg};`}>
               <span style={`color: ${std12SubjectColors[i].iconColor};`} set:html={s.icon}></span>
             </div>
@@ -147,11 +147,11 @@ const feeStructure = [
         Special Courses
       </h2>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-        <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style="background: color-mix(in srgb, var(--color-card-saffron) 25%, white); border-top: 3px solid var(--color-card-saffron);">
+        <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style="background: color-mix(in srgb, var(--color-card-saffron) 40%, white); border-top: 3px solid var(--color-card-saffron);">
           <p class="text-xs md:text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Std 6 to 10 | ₹800/month</p>
           <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">Strengthen your mathematical foundation with focused coaching and practice.</p>
         </div>
-        <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style="background: color-mix(in srgb, var(--color-card-mint) 25%, white); border-top: 3px solid var(--color-card-mint);">
+        <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style="background: color-mix(in srgb, var(--color-card-mint) 30%, white); border-top: 3px solid var(--color-card-mint);">
           <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Basic English</h3>
           <p class="text-xs md:text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Std 6 to 10 | ₹1,000/month</p>
           <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">Improve your English grammar, vocabulary, and communication skills.</p>

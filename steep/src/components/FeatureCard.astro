@@ -1,10 +1,10 @@
 ---
 import TiltCard from './TiltCard';
-const { icon, title, description, bg = 'var(--color-card-saffron)', iconColor = 'var(--color-midnight-ink)' } = Astro.props;
+const { icon, title, description, bg = 'var(--color-card-saffron)', iconColor = 'var(--color-midnight-ink)', mixPct = '40%' } = Astro.props;
 ---
 
 <TiltCard client:load>
-  <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${bg} 25%, white); border-top: 3px solid ${bg};`}>
+  <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${bg} ${mixPct}, white); border-top: 3px solid ${bg};`}>
     <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon" style={`background: ${bg};`}>
       <span style={`color: ${iconColor};`} set:html={icon}></span>
     </div>

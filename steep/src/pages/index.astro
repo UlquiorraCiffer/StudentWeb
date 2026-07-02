@@ -8,19 +8,19 @@ import Eyebrow from '../components/Eyebrow.astro';
 import HaloHeading from '../components/HaloHeading.astro';
 
 const featureAccents = [
-  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)', mixPct: '40%' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)', mixPct: '25%' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)', mixPct: '10%' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)', mixPct: '40%' },
 ];
 
 const aiAccents = [
-  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
-  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)', mixPct: '40%' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)', mixPct: '25%' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)', mixPct: '30%' },
 ];
 
 const features = [
@@ -66,6 +66,7 @@ const aiFeatures = [
             description={f.desc}
             bg={featureAccents[i].bg}
             iconColor={featureAccents[i].iconColor}
+            mixPct={featureAccents[i].mixPct}
           />
         ))}
       </div>
@@ -83,7 +84,7 @@ const aiFeatures = [
       </p>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-8">
         {aiFeatures.map((f, i) => (
-          <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${aiAccents[i].bg} 25%, white); border-top: 3px solid ${aiAccents[i].bg};`}>
+          <div class="rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8" style={`background: color-mix(in srgb, ${aiAccents[i].bg} ${aiAccents[i].mixPct}, white); border-top: 3px solid ${aiAccents[i].bg};`}>
             <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon text-xl" style={`background: ${aiAccents[i].bg}; color: ${aiAccents[i].iconColor};`}>
               <span set:html={f.emoji}></span>
             </div>
