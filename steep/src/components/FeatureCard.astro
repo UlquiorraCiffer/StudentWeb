@@ -1,15 +1,18 @@
 ---
-const { icon, title, description } = Astro.props;
+import TiltCard from './TiltCard';
+const { icon, title, description, bg = 'var(--color-card-saffron)', iconColor = 'var(--color-midnight-ink)' } = Astro.props;
 ---
 
-<div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-  <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
-    <span class="text-[var(--color-rust)]" set:html={icon}></span>
+<TiltCard client:load>
+  <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon" style={`background: ${bg};`}>
+      <span style={`color: ${iconColor};`} set:html={icon}></span>
+    </div>
+    <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">
+      {title}
+    </h3>
+    <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
+      {description}
+    </p>
   </div>
-  <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">
-    {title}
-  </h3>
-  <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
-    {description}
-  </p>
-</div>
+</TiltCard>

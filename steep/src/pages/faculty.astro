@@ -1,5 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FacultyTooltip from '../components/FacultyTooltip';
+
+const subjectColors: Record<string, { bg: string; iconColor: string }> = {
+  English: { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  'Social Science': { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  Science: { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
+  Mathematics: { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  Gujarati: { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
+  Sanskrit: { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  Accounts: { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  Statistics: { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
+  Economics: { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  'B.A.': { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
+};
 
 const std10Faculty = [
   { name: 'Hardik Sir', role: 'Std 10 & 12 English Faculty', subjects: 'English', initials: 'H' },
@@ -16,6 +30,10 @@ const std12Faculty = [
   { name: 'Deepak Sir', role: 'Std 12 Commerce Faculty', subjects: 'Economics', initials: 'DE' },
   { name: 'Vijay Sir', role: 'Std 12 Commerce Faculty', subjects: 'B.A.', initials: 'V' },
 ];
+
+function getSubjectColor(subject: string) {
+  return subjectColors[subject] || { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' };
+}
 ---
 
 <Layout title="Faculty | Eklavya Tuition Classes" description="Meet our dedicated faculty at Eklavya Tuition Classes — experienced teachers for Std 10 and Std 12 Commerce.">
@@ -35,18 +53,19 @@ const std12Faculty = [
         Std 10 Teachers
       </h2>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-        {std10Faculty.map(f => (
-          <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
-            <div class="w-10 h-10 md:w-14 md:h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
-              <span class="text-[var(--color-rust)] text-sm md:text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
+        {std10Faculty.map(f => {
+          const c = getSubjectColor(f.subjects);
+          return (
+            <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
+              <FacultyTooltip name={f.name} role={f.role} initials={f.initials} bg={c.bg} iconColor={c.iconColor} client:load />
+              <div class="grow text-center md:text-left">
+                <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.name}</h3>
+                <p class="text-[11px] md:text-sm text-[var(--color-midnight-ink)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
+                <p class="text-[11px] md:text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
+              </div>
             </div>
-            <div class="grow text-center md:text-left">
-              <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.name}</h3>
-              <p class="text-[11px] md:text-sm text-[var(--color-rust)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
-              <p class="text-[11px] md:text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
 
@@ -55,18 +74,19 @@ const std12Faculty = [
         Std 12 Commerce Teachers
       </h2>
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-        {std12Faculty.map(f => (
-          <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
-            <div class="w-10 h-10 md:w-14 md:h-14 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center shrink-0">
-              <span class="text-[var(--color-rust)] text-sm md:text-lg font-bold" style="font-family: var(--font-signifier);">{f.initials}</span>
+        {std12Faculty.map(f => {
+          const c = getSubjectColor(f.subjects);
+          return (
+            <div class="bg-[var(--surface-fog)] rounded-3xl p-3 md:p-6 lg:p-8 flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 transition-transform duration-300 hover:scale-[1.02]">
+              <FacultyTooltip name={f.name} role={f.role} initials={f.initials} bg={c.bg} iconColor={c.iconColor} client:load />
+              <div class="grow text-center md:text-left">
+                <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.name}</h3>
+                <p class="text-[11px] md:text-sm text-[var(--color-midnight-ink)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
+                <p class="text-[11px] md:text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
+              </div>
             </div>
-            <div class="grow text-center md:text-left">
-              <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.name}</h3>
-              <p class="text-[11px] md:text-sm text-[var(--color-rust)] mt-1" style="font-family: var(--font-sohne);">{f.role}</p>
-              <p class="text-[11px] md:text-sm text-[var(--color-graphite)] mt-1" style="font-family: var(--font-sohne);">Subject: {f.subjects}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
 
@@ -74,13 +94,13 @@ const std12Faculty = [
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-4" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Director
       </h2>
-      <div class="w-20 h-20 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mx-auto mb-4">
-        <span class="text-[var(--color-rust)] text-2xl font-bold" style="font-family: var(--font-signifier);">YK</span>
+      <div class="w-20 h-20 bg-[var(--color-card-lavender)] rounded-full flex items-center justify-center mx-auto mb-4">
+        <span class="text-[var(--color-midnight-ink)] text-2xl font-bold" style="font-family: var(--font-signifier);">YK</span>
       </div>
       <h3 class="text-[var(--text-heading-sm)] font-medium" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
         Yogeshbhai Katariya
       </h3>
-      <p class="text-sm text-[var(--color-rust)] font-medium mt-1" style="font-family: var(--font-sohne);">M.Com, B.Ed — 11 Years Experience</p>
+      <p class="text-sm text-[var(--color-midnight-ink)] font-medium mt-1" style="font-family: var(--font-sohne);">M.Com, B.Ed — 11 Years Experience</p>
       <p class="text-[var(--text-body)] text-[var(--color-ink)] max-w-2xl mx-auto mt-4 leading-relaxed" style="font-family: var(--font-sohne); font-size: var(--text-body);">
         "Eklavya — Where trust, education and future are guaranteed!"
       </p>

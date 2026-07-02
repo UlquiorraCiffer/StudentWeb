@@ -1,5 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TiltCard from '../components/TiltCard';
+
+const facilityColors = [
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+];
 
 const facilities = [
   {
@@ -63,10 +76,11 @@ const facilities = [
     </section>
 
     <section class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-      {facilities.map(f => (
-        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] border border-[var(--color-fog)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
-            <span class="text-[var(--color-rust)]" set:html={f.icon}></span>
+      {facilities.map((f, i) => (
+        <TiltCard client:load>
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon" style={`background: ${facilityColors[i].bg};`}>
+            <span style={`color: ${facilityColors[i].iconColor};`} set:html={f.icon}></span>
           </div>
           <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">
             {f.title}
@@ -75,6 +89,7 @@ const facilities = [
             {f.description}
           </p>
         </div>
+        </TiltCard>
       ))}
     </section>
 

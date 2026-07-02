@@ -4,6 +4,38 @@ import Hero from '../components/Hero.astro';
 import StatsBar from '../components/StatsBar.astro';
 import QuickStart from '../components/QuickStart.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+
+const featureAccents = [
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+];
+
+const aiAccents = [
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+];
+
+const features = [
+  { icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'/></svg>", title: "Small Batch Sizes", desc: "Every student gets individual attention. Our small class sizes ensure no one is left behind." },
+  { icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z'/></svg>", title: "Star Rating 4.9", desc: "Rated 4.9 by 32 parents and students. Consistent academic improvement across all subjects." },
+  { icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11m16-11v11M8 14v.5m8-.5v.5M8 18v.5m8-.5v.5'/></svg>", title: "Dual Medium", desc: "Classes available in both Gujarati and English mediums catering to diverse student needs." },
+  { icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'/></svg>", title: "All Subjects", desc: "Std 10: English, Science, Maths, Social Science, Gujarati, Sanskrit. Std 12 Commerce: Accounts, Statistics, Economics, B.A., English, Gujarati." },
+  { icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'/></svg>", title: "Digital Board", desc: "Every classroom has a digital board. AI-powered learning with deep discussions on any topic." },
+  { icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 14l9-5-9-5-9 5 9 5z'/><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z'/></svg>", title: "11+ Years Legacy", desc: "Founded in 2015 by Yogeshbhai Katariya (M.Com, B.Ed). Over 9,000 students taught and 18,000+ parents trust us." },
+];
+
+const aiFeatures = [
+  { emoji: "&#129504;", title: "AI-Based Deep Discussion", desc: "Any topic, any doubt — our AI-assisted teaching lets students explore concepts at a deeper level beyond the textbook." },
+  { emoji: "&#128200;", title: "Smart Doubt Solving", desc: "Students get instant AI-powered explanations for difficult problems in Maths, Science, Accounts and more." },
+  { emoji: "&#128221;", title: "Board Exam Preparation with AI", desc: "AI tools help identify weak areas and focus revision where it matters most — especially for Std 10 & 12 board exams." },
+  { emoji: "&#127758;", title: "Future-Ready Education", desc: "Since 2025, Eklavya has integrated AI tools in every classroom — preparing students not just for exams, but for the future." },
+];
 ---
 
 <Layout>
@@ -22,100 +54,53 @@ import FeatureCard from '../components/FeatureCard.astro';
         Why Choose Eklavya
       </h2>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-        <FeatureCard
-          icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z'/></svg>"
-          title="Small Batch Sizes"
-          description="Every student gets individual attention. Our small class sizes ensure no one is left behind."
-        />
-        <FeatureCard
-          icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z'/></svg>"
-          title="Star Rating 4.9"
-          description="Rated 4.9 ⭐ by 32 parents and students. Consistent academic improvement across all subjects."
-        />
-        <FeatureCard
-          icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11m16-11v11M8 14v.5m8-.5v.5M8 18v.5m8-.5v.5'/></svg>"
-          title="Dual Medium"
-          description="Classes available in both Gujarati and English mediums catering to diverse student needs."
-        />
-        <FeatureCard
-          icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'/></svg>"
-          title="All Subjects"
-          description="Std 10: English, Science, Maths, Social Science, Gujarati, Sanskrit. Std 12 Commerce: Accounts, Statistics, Economics, B.A., English, Gujarati."
-        />
-        <FeatureCard
-          icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'/></svg>"
-          title="Digital Board"
-          description="Every classroom has a digital board. AI-powered learning with deep discussions on any topic."
-        />
-        <FeatureCard
-          icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 14l9-5-9-5-9 5 9 5z'/><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z'/></svg>"
-          title="11+ Years Legacy"
-          description="Founded in 2015 by Yogeshbhai Katariya (M.Com, B.Ed). Over 9,000 students taught and 18,000+ parents trust us."
-        />
+        {features.map((f, i) => (
+          <FeatureCard
+            icon={f.icon}
+            title={f.title}
+            description={f.desc}
+            bg={featureAccents[i].bg}
+            iconColor={featureAccents[i].iconColor}
+          />
+        ))}
       </div>
     </section>
 
-    <!-- AI-Powered Learning Section -->
     <section class="bg-[var(--surface-fog)] rounded-3xl p-8 md:p-12">
       <div class="flex items-center gap-2 mb-2">
-        <span class="bg-[var(--color-apricot-wash)] text-[var(--color-rust)] px-4 py-1.5 rounded-full text-sm font-medium inline-flex items-center gap-1.5" style="font-family: var(--font-sohne);">
+        <span class="bg-[var(--color-card-mint)] text-[var(--color-accent-green)] px-4 py-1.5 rounded-full text-sm font-medium inline-flex items-center gap-1.5" style="font-family: var(--font-sohne);">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           Since 2025
         </span>
       </div>
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-3" style="font-family: var(--font-signifier); color: var(--color-ink);">
-        Now Powered by AI &#129302;
+        Now Powered by AI
       </h2>
       <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl mb-10 leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne);">
         Eklavya Tuition Classes uses Artificial Intelligence to make learning smarter, faster, and more effective for every student.
       </p>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-2 gap-2 md:gap-6 lg:gap-8">
-        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
-            <span class="text-[var(--color-rust)] text-xl">&#129504;</span>
+        {aiFeatures.map((f, i) => (
+          <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon text-xl" style={`background: ${aiAccents[i].bg}; color: ${aiAccents[i].iconColor};`}>
+              <span set:html={f.emoji}></span>
+            </div>
+            <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">{f.title}</h3>
+            <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
+              {f.desc}
+            </p>
           </div>
-          <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">AI-Based Deep Discussion</h3>
-          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
-            Any topic, any doubt — our AI-assisted teaching lets students explore concepts at a deeper level beyond the textbook.
-          </p>
-        </div>
-        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
-            <span class="text-[var(--color-rust)] text-xl">&#128200;</span>
-          </div>
-          <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Smart Doubt Solving</h3>
-          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
-            Students get instant AI-powered explanations for difficult problems in Maths, Science, Accounts and more.
-          </p>
-        </div>
-        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
-            <span class="text-[var(--color-rust)] text-xl">&#128221;</span>
-          </div>
-          <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Board Exam Preparation with AI</h3>
-          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
-            AI tools help identify weak areas and focus revision where it matters most — especially for Std 10 &amp; 12 board exams.
-          </p>
-        </div>
-        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-          <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
-            <span class="text-[var(--color-rust)] text-xl">&#127758;</span>
-          </div>
-          <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Future-Ready Education</h3>
-          <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">
-            Since 2025, Eklavya has integrated AI tools in every classroom — preparing students not just for exams, but for the future.
-          </p>
-        </div>
+        ))}
       </div>
     </section>
 
     <QuickStart />
 
-    <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-8 md:p-12 text-center">
+    <section class="bg-[var(--surface-fog)] rounded-3xl p-8 md:p-12 text-center">
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); color: var(--color-ink);">
         Our Promise
       </h2>
-      <blockquote class="text-[var(--text-heading-sm)] text-[var(--color-rust)] max-w-3xl mx-auto leading-relaxed italic" style="font-family: var(--font-signifier);">
+      <blockquote class="text-[var(--text-heading-sm)] text-[var(--color-midnight-ink)] max-w-3xl mx-auto leading-relaxed italic" style="font-family: var(--font-signifier);">
         "Eklavya — Where trust, education and future are guaranteed!"
       </blockquote>
     </section>

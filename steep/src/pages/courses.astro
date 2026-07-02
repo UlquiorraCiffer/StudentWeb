@@ -1,6 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const std10SubjectColors = [
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+];
+
+const std12SubjectColors = [
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-mint)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-lavender)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-highlight-yellow)', iconColor: 'var(--color-midnight-ink)' },
+  { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
+];
+
 const std10Subjects = [
   { name: 'English', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'/></svg>", teacher: 'Hardik Sir' },
   { name: 'Social Science', icon: "<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/></svg>", teacher: 'Ankit Sir' },
@@ -49,10 +67,10 @@ const feeStructure = [
         Medium of Instruction
       </h2>
       <div class="flex flex-wrap gap-3">
-        <span class="bg-[var(--color-apricot-wash)] text-[var(--color-rust)] px-6 py-3 rounded-full text-base font-medium" style="font-family: var(--font-sohne);">
+        <span class="bg-[var(--color-card-saffron)] text-[var(--color-midnight-ink)] px-6 py-3 rounded-full text-base font-medium" style="font-family: var(--font-sohne);">
           Gujarati Medium
         </span>
-        <span class="bg-[var(--color-apricot-wash)] text-[var(--color-rust)] px-6 py-3 rounded-full text-base font-medium" style="font-family: var(--font-sohne);">
+        <span class="bg-[var(--color-card-saffron)] text-[var(--color-midnight-ink)] px-6 py-3 rounded-full text-base font-medium" style="font-family: var(--font-sohne);">
           English Medium
         </span>
       </div>
@@ -63,13 +81,13 @@ const feeStructure = [
         Std 10 Subjects
       </h2>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-        {std10Subjects.map(s => (
-          <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-            <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
-              <span class="text-[var(--color-rust)]" set:html={s.icon}></span>
+        {std10Subjects.map((s, i) => (
+            <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon" style={`background: ${std10SubjectColors[i].bg};`}>
+              <span style={`color: ${std10SubjectColors[i].iconColor};`} set:html={s.icon}></span>
             </div>
             <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); color: var(--color-ink);">{s.name}</h3>
-            <p class="text-xs md:text-sm text-[var(--color-rust)] grow" style="font-family: var(--font-sohne);">{s.teacher}</p>
+            <p class="text-xs md:text-sm text-[var(--color-midnight-ink)] grow" style="font-family: var(--font-sohne);">{s.teacher}</p>
           </div>
         ))}
       </div>
@@ -80,19 +98,19 @@ const feeStructure = [
         Std 12 Commerce Subjects
       </h2>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-        {std12Subjects.map(s => (
-          <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
-            <div class="w-10 h-10 md:w-12 md:h-12 bg-[var(--color-apricot-wash)] rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon">
-              <span class="text-[var(--color-rust)]" set:html={s.icon}></span>
+        {std12Subjects.map((s, i) => (
+          <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-3 md:mb-4 shrink-0 card-icon" style={`background: ${std12SubjectColors[i].bg};`}>
+              <span style={`color: ${std12SubjectColors[i].iconColor};`} set:html={s.icon}></span>
             </div>
             <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-1" style="font-family: var(--font-signifier); color: var(--color-ink);">{s.name}</h3>
-            <p class="text-xs md:text-sm text-[var(--color-rust)] grow" style="font-family: var(--font-sohne);">{s.teacher}</p>
+            <p class="text-xs md:text-sm text-[var(--color-midnight-ink)] grow" style="font-family: var(--font-sohne);">{s.teacher}</p>
           </div>
         ))}
       </div>
     </section>
 
-    <section class="bg-[var(--surface-warm-tint)] rounded-3xl p-12">
+    <section class="bg-[var(--surface-fog)] rounded-3xl p-12">
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Fee Structure (Annual)
       </h2>
@@ -108,7 +126,7 @@ const feeStructure = [
             {feeStructure.map(f => (
               <tr class="border-b border-[var(--color-dove)] last:border-0">
                 <td class="py-4 text-[var(--color-ink)]" style="font-family: var(--font-sohne); font-size: var(--text-body);">{f.standard}</td>
-                <td class="py-4 text-[var(--color-rust)] font-medium" style="font-family: var(--font-sohne); font-size: var(--text-body);">{f.fee}</td>
+                <td class="py-4 text-[var(--color-midnight-ink)] font-medium" style="font-family: var(--font-sohne); font-size: var(--text-body);">{f.fee}</td>
               </tr>
             ))}
           </tbody>
@@ -121,17 +139,17 @@ const feeStructure = [
         Special Courses
       </h2>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
-        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
           <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Basic Maths</h3>
           <p class="text-xs md:text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Std 6 to 10 | ₹800/month</p>
           <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">Strengthen your mathematical foundation with focused coaching and practice.</p>
         </div>
-        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
           <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Basic English</h3>
           <p class="text-xs md:text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Std 6 to 10 | ₹1,000/month</p>
           <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">Improve your English grammar, vocabulary, and communication skills.</p>
         </div>
-        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-subtle)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
+        <div class="bg-[var(--surface-card)] rounded-2xl shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02] flex flex-col p-3 md:p-6 lg:p-8">
           <h3 class="text-[13px] md:text-[var(--text-heading-sm)] font-medium mb-2" style="font-family: var(--font-signifier); color: var(--color-ink);">Alphavedic Skill Development</h3>
           <p class="text-xs md:text-sm text-[var(--color-graphite)] mb-2" style="font-family: var(--font-sohne);">Ages 8 to 14</p>
           <p class="text-[11px] md:text-[var(--text-body)] text-[var(--color-graphite)] leading-[var(--leading-body)] grow card-desc" style="font-family: var(--font-sohne);">Abacus & Finger Math program to boost mental arithmetic and cognitive skills.</p>

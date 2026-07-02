@@ -34,8 +34,8 @@ import Layout from '../layouts/Layout.astro';
               Phone
             </h3>
             <p class="pl-7" style="font-family: var(--font-sohne); font-size: var(--text-body);">
-              <a href="tel:+919054515619" class="text-[var(--color-rust)] hover:underline">09054515619</a><br />
-              <a href="tel:+919586571876" class="text-[var(--color-rust)] hover:underline">95865 71876</a>
+              <a href="tel:+919054515619" class="text-[var(--color-midnight-ink)] hover:underline">09054515619</a><br />
+              <a href="tel:+919586571876" class="text-[var(--color-midnight-ink)] hover:underline">95865 71876</a>
             </p>
           </div>
           <div>
@@ -61,25 +61,25 @@ import Layout from '../layouts/Layout.astro';
       </section>
 
       <section>
-        <div class="bg-[var(--surface-card)] rounded-3xl p-10 shadow-[var(--shadow-subtle)] border border-[var(--color-fog)]">
+        <div class="bg-[var(--surface-card)] rounded-3xl p-10 shadow-[var(--shadow-card)]">
           <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
             Enquiry Form
           </h2>
           <form id="enquiry-form" class="space-y-5" action="#" method="POST">
             <div>
               <label for="name" class="block text-sm font-medium text-[var(--color-ink)] mb-1" style="font-family: var(--font-sohne);">Student Name *</label>
-              <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-apricot-wash)]" style="font-family: var(--font-sohne);" />
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-card-saffron)]" style="font-family: var(--font-sohne);" />
             </div>
             <div>
               <label for="grade" class="block text-sm font-medium text-[var(--color-ink)] mb-1" style="font-family: var(--font-sohne);">Standard *</label>
-              <select id="grade" name="grade" required class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-apricot-wash)]" style="font-family: var(--font-sohne);">
+              <select id="grade" name="grade" required class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-card-saffron)]" style="font-family: var(--font-sohne);">
                 <option value="">Select standard</option>
                 {[...Array(12)].map((_, i) => <option value={i + 1}>Std {i + 1}{i >= 11 ? ' (Commerce)' : ''}</option>)}
               </select>
             </div>
             <div>
               <label for="medium" class="block text-sm font-medium text-[var(--color-ink)] mb-1" style="font-family: var(--font-sohne);">Medium *</label>
-              <select id="medium" name="medium" required class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-apricot-wash)]" style="font-family: var(--font-sohne);">
+              <select id="medium" name="medium" required class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-card-saffron)]" style="font-family: var(--font-sohne);">
                 <option value="">Select medium</option>
                 <option value="gujarati">Gujarati Medium</option>
                 <option value="english">English Medium</option>
@@ -87,13 +87,13 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div>
               <label for="phone" class="block text-sm font-medium text-[var(--color-ink)] mb-1" style="font-family: var(--font-sohne);">Phone Number *</label>
-              <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Enter 10-digit mobile number" class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-apricot-wash)]" style="font-family: var(--font-sohne);" />
+              <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Enter 10-digit mobile number" class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-card-saffron)]" style="font-family: var(--font-sohne);" />
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-[var(--color-ink)] mb-1" style="font-family: var(--font-sohne);">Message</label>
-              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-apricot-wash)] resize-none" style="font-family: var(--font-sohne);"></textarea>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-[var(--radius-inputs)] border border-[var(--color-dove)] bg-[var(--surface-canvas)] text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-card-saffron)] resize-none" style="font-family: var(--font-sohne);"></textarea>
             </div>
-            <button type="submit" class="w-full bg-[var(--color-ink)] text-[var(--color-pure-white)] px-6 py-3 rounded-full text-sm font-medium transition-opacity hover:opacity-90" style="font-family: var(--font-sohne);">
+            <button type="submit" class="w-full bg-[var(--color-accent-green)] text-[var(--color-midnight-ink)] px-6 py-3 rounded-full text-sm font-medium transition-opacity hover:opacity-90" style="font-family: var(--font-sohne);">
               Send Enquiry
             </button>
             <p id="form-status" class="text-sm text-center hidden" style="font-family: var(--font-sohne);"></p>
