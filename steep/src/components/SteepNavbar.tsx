@@ -27,12 +27,16 @@ export default function SteepNavbar({ currentPath = "/" }: { currentPath?: strin
   return (
     <Navbar>
       <NavBody>
-        <a href="/" className="relative z-20 mr-4 flex items-center gap-2 px-2 py-1 text-lg font-medium shrink-0" style={{ fontFamily: "var(--font-signifier)", color: "var(--color-ink)" }}>
-          Eklavya
-          <span className="nav-ai-badge hidden sm:inline-flex">⚡ AI-Powered</span>
-        </a>
-        <NavItems items={navItems} />
-        <div className="relative z-20 flex items-center gap-2 shrink-0">
+        <div className="flex-1 flex items-center justify-start">
+          <a href="/" className="flex items-center gap-2 px-2 py-1 text-lg font-medium" style={{ fontFamily: "var(--font-signifier)", color: "var(--color-ink)" }}>
+            Eklavya
+            <span className="nav-ai-badge hidden sm:inline-flex">⚡ AI-Powered</span>
+          </a>
+        </div>
+        <div className="flex-1 flex items-center justify-center">
+          <NavItems items={navItems} />
+        </div>
+        <div className="flex-1 flex items-center justify-end">
           <a href="/contact">
             <button className="bg-[var(--color-accent-green)] text-[var(--color-midnight-ink)] px-6 py-2.5 rounded-full text-sm font-medium transition-opacity hover:opacity-85 min-h-[44px]" style={{ fontFamily: "var(--font-sohne)" }}>
               Enquire Now
