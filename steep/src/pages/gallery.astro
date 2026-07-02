@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 
 const activityColors = [
   { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
@@ -24,10 +25,11 @@ const activities = [
 ];
 ---
 
-<Layout title="Gallery | Eklavya Tuition Classes" description="Student activities at Eklavya Tuition Classes — cultural programs, sports, festivals, award ceremonies, and more in Surat.">
+<Layout title="Gallery | Eklavya Tuition Classes" description="Student activities at Eklavya Tuition Classes — cultural programs, sports, festivals, award ceremonies, and more in Surat." atmosphere="warm">
   <div class="space-y-12 md:space-y-16">
 
     <section>
+      <Eyebrow text="// GALLERY" />
       <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
         Student Life
       </h1>

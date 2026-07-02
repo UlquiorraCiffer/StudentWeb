@@ -1,0 +1,13 @@
+---
+const { color = 'var(--color-card-saffron)', class: className = '' } = Astro.props;
+---
+
+<div class={`relative ${className}`}>
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style={`background: radial-gradient(circle at 50% 50%, color-mix(in srgb, ${color} 30%, transparent) 0%, transparent 60%);`}
+  />
+  <div class="relative">
+    <slot />
+  </div>
+</div>

@@ -4,6 +4,8 @@ import Hero from '../components/Hero.astro';
 import StatsBar from '../components/StatsBar.astro';
 import QuickStart from '../components/QuickStart.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import HaloHeading from '../components/HaloHeading.astro';
 
 const featureAccents = [
   { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
@@ -38,7 +40,7 @@ const aiFeatures = [
 ];
 ---
 
-<Layout>
+<Layout atmosphere="warm">
   <div class="space-y-12 md:space-y-16">
     <Hero
       title="Eklavya"
@@ -50,9 +52,12 @@ const aiFeatures = [
     <StatsBar />
 
     <section>
-      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8 md:mb-12" style="font-family: var(--font-signifier); color: var(--color-ink);">
-        Why Choose Eklavya
-      </h2>
+      <Eyebrow text="// WHAT WE OFFER" />
+      <HaloHeading>
+        <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8 md:mb-12" style="font-family: var(--font-signifier); color: var(--color-ink);">
+          Why Choose Eklavya
+        </h2>
+      </HaloHeading>
       <div class="card-grid grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 lg:gap-8">
         {features.map((f, i) => (
           <FeatureCard
@@ -67,15 +72,12 @@ const aiFeatures = [
     </section>
 
     <section class="bg-[var(--section-tint-saffron)] rounded-3xl p-8 md:p-12">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="bg-[var(--color-card-mint)] text-[var(--color-accent-green)] px-4 py-1.5 rounded-full text-sm font-medium inline-flex items-center gap-1.5" style="font-family: var(--font-sohne);">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          Since 2025
-        </span>
-      </div>
-      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-3" style="font-family: var(--font-signifier); color: var(--color-ink);">
-        Now Powered by AI
-      </h2>
+      <Eyebrow text="// SINCE 2025" icon="⚡" />
+      <HaloHeading color="var(--color-card-saffron)">
+        <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-3" style="font-family: var(--font-signifier); color: var(--color-ink);">
+          Now Powered by AI
+        </h2>
+      </HaloHeading>
       <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl mb-10 leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne);">
         Eklavya Tuition Classes uses Artificial Intelligence to make learning smarter, faster, and more effective for every student.
       </p>
@@ -97,6 +99,7 @@ const aiFeatures = [
     <QuickStart />
 
     <section class="bg-[var(--section-tint-lavender)] rounded-3xl p-8 md:p-12 text-center">
+      <Eyebrow text="// OUR PROMISE" class="justify-center" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-6" style="font-family: var(--font-signifier); color: var(--color-ink);">
         Our Promise
       </h2>

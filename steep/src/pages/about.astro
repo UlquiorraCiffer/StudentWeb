@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import HaloHeading from '../components/HaloHeading.astro';
 ---
 
-<Layout title="About Us | Eklavya Tuition Classes" description="Learn about Eklavya Tuition Classes — established 2015 in Surat. Director Yogeshbhai Katariya. Std 1-12 Commerce coaching.">
+<Layout title="About Us | Eklavya Tuition Classes" description="Learn about Eklavya Tuition Classes — established 2015 in Surat. Director Yogeshbhai Katariya. Std 1-12 Commerce coaching." atmosphere="cool">
   <div class="space-y-12 md:space-y-16">
 
     <section>
+      <Eyebrow text="// ABOUT US" />
       <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
         About Us
       </h1>
@@ -16,6 +19,7 @@ import Layout from '../layouts/Layout.astro';
 
     <section class="grid md:grid-cols-2 gap-12">
       <div class="bg-[var(--section-tint-mint)] rounded-3xl p-10">
+        <Eyebrow text="// OUR MISSION" />
         <h2 class="text-[var(--text-heading-sm)] font-serif font-medium mb-4" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
           Our Mission
         </h2>
@@ -24,6 +28,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
       <div class="bg-[var(--section-tint-pink)] rounded-3xl p-10">
+        <Eyebrow text="// OUR VISION" />
         <h2 class="text-[var(--text-heading-sm)] font-serif font-medium mb-4" style="font-family: var(--font-signifier); font-size: var(--text-heading-sm); color: var(--color-ink);">
           Our Vision
         </h2>
@@ -34,9 +39,12 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <section>
-      <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
-        Our Story
-      </h2>
+      <Eyebrow text="// OUR STORY" />
+      <HaloHeading color="var(--color-card-saffron)">
+        <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
+          Our Story
+        </h2>
+      </HaloHeading>
       <div class="bg-[var(--section-tint-saffron)] rounded-3xl p-10 md:p-12">
         <p class="text-[var(--text-body)] text-[var(--color-ink)] leading-relaxed mb-4" style="font-family: var(--font-sohne); font-size: var(--text-body);">
           Founded by <strong>Yogeshbhai Katariya (M.Com, B.Ed)</strong> with 11 years of experience, Eklavya Tuition Classes began as a small initiative that has grown into a thriving learning community. Over the past 11 years, we have taught over 9,000 students and earned the trust of 18,000+ parents.
@@ -51,6 +59,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <section class="bg-[var(--section-tint-lavender)] rounded-3xl p-12 text-center">
+      <Eyebrow text="// DIRECTOR" class="justify-center" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-4" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Director
       </h2>

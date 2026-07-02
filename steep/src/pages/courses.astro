@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import HaloHeading from '../components/HaloHeading.astro';
 
 const std10SubjectColors = [
   { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
@@ -50,10 +52,11 @@ const feeStructure = [
 ];
 ---
 
-<Layout title="Courses | Eklavya Tuition Classes" description="Std 1 to 12 Commerce coaching in Surat. Gujarati & English medium. Fee structure, subjects, and special courses at Eklavya Tuition Classes.">
+<Layout title="Courses | Eklavya Tuition Classes" description="Std 1 to 12 Commerce coaching in Surat. Gujarati & English medium. Fee structure, subjects, and special courses at Eklavya Tuition Classes." atmosphere="saffron">
   <div class="space-y-12 md:space-y-16">
 
     <section>
+      <Eyebrow text="// COURSES" />
       <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
         Courses
       </h1>
@@ -63,6 +66,7 @@ const feeStructure = [
     </section>
 
     <section>
+      <Eyebrow text="// MEDIUM" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Medium of Instruction
       </h2>
@@ -77,6 +81,7 @@ const feeStructure = [
     </section>
 
     <section>
+      <Eyebrow text="// STD 10 SUBJECTS" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Std 10 Subjects
       </h2>
@@ -94,6 +99,7 @@ const feeStructure = [
     </section>
 
     <section>
+      <Eyebrow text="// STD 12 SUBJECTS" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Std 12 Commerce Subjects
       </h2>
@@ -111,6 +117,7 @@ const feeStructure = [
     </section>
 
     <section class="bg-[var(--section-tint-pink)] rounded-3xl p-12">
+      <Eyebrow text="// FEE STRUCTURE" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Fee Structure (Annual)
       </h2>
@@ -135,6 +142,7 @@ const feeStructure = [
     </section>
 
     <section>
+      <Eyebrow text="// SPECIAL COURSES" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Special Courses
       </h2>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import TiltCard from '../components/TiltCard';
+import Eyebrow from '../components/Eyebrow.astro';
 
 const facilityColors = [
   { bg: 'var(--color-card-pink)', iconColor: 'var(--color-midnight-ink)' },
@@ -63,10 +64,11 @@ const facilities = [
 ];
 ---
 
-<Layout title="Facilities | Eklavya Tuition Classes" description="Explore our facilities — AC classrooms, CCTV, digital boards, AI-powered teaching, and more at Eklavya Tuition Classes Surat.">
+<Layout title="Facilities | Eklavya Tuition Classes" description="Explore our facilities — AC classrooms, CCTV, digital boards, AI-powered teaching, and more at Eklavya Tuition Classes Surat." atmosphere="mint">
   <div class="space-y-12 md:space-y-16">
 
     <section>
+      <Eyebrow text="// FACILITIES" />
       <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
         Facilities
       </h1>

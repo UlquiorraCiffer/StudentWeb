@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FacultyTooltip from '../components/FacultyTooltip';
+import Eyebrow from '../components/Eyebrow.astro';
+import HaloHeading from '../components/HaloHeading.astro';
 
 const subjectColors: Record<string, { bg: string; iconColor: string }> = {
   English: { bg: 'var(--color-card-saffron)', iconColor: 'var(--color-midnight-ink)' },
@@ -36,19 +38,23 @@ function getSubjectColor(subject: string) {
 }
 ---
 
-<Layout title="Faculty | Eklavya Tuition Classes" description="Meet our dedicated faculty at Eklavya Tuition Classes — experienced teachers for Std 10 and Std 12 Commerce.">
+<Layout title="Faculty | Eklavya Tuition Classes" description="Meet our dedicated faculty at Eklavya Tuition Classes — experienced teachers for Std 10 and Std 12 Commerce." atmosphere="lavender">
   <div class="space-y-12 md:space-y-16">
 
     <section>
-      <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
-        Our Faculty
-      </h1>
+      <Eyebrow text="// FACULTY" />
+      <HaloHeading>
+        <h1 class="font-serif font-normal leading-[var(--leading-display)] tracking-[var(--tracking-display)] mb-6" style="font-family: var(--font-signifier); font-size: var(--text-display); color: var(--color-ink);">
+          Our Faculty
+        </h1>
+      </HaloHeading>
       <p class="text-[var(--text-body-lg)] text-[var(--color-ash)] max-w-3xl leading-[var(--leading-body-lg)]" style="font-family: var(--font-sohne); font-size: var(--text-body-lg);">
         Meet the dedicated educators behind Eklavya's success. Led by Director <strong>Yogeshbhai Katariya (M.Com, B.Ed)</strong> — 11 years of experience.
       </p>
     </section>
 
     <section>
+      <Eyebrow text="// STD 10" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Std 10 Teachers
       </h2>
@@ -70,6 +76,7 @@ function getSubjectColor(subject: string) {
     </section>
 
     <section>
+      <Eyebrow text="// STD 12 COMMERCE" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-8" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Std 12 Commerce Teachers
       </h2>
@@ -91,6 +98,7 @@ function getSubjectColor(subject: string) {
     </section>
 
     <section class="bg-[var(--section-tint-mint)] rounded-3xl p-12 text-center">
+      <Eyebrow text="// DIRECTOR" class="justify-center" />
       <h2 class="text-[var(--text-heading)] font-serif font-normal leading-[var(--leading-heading)] tracking-[var(--tracking-heading)] mb-4" style="font-family: var(--font-signifier); font-size: var(--text-heading); color: var(--color-ink);">
         Director
       </h2>

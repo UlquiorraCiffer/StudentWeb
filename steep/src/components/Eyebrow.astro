@@ -1,0 +1,11 @@
+---
+const { text, icon, class: className = '' } = Astro.props;
+---
+
+<span
+  class={`inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-graphite)] mb-2 ${className}`}
+  style="font-family: var(--font-sohne);"
+>
+  {icon && <span set:html={icon} />}
+  {text}
+</span>
