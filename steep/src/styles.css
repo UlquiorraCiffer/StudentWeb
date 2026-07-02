@@ -369,7 +369,7 @@
   position: fixed;
   inset: -20px;
   z-index: -2;
-  opacity: 0.25;
+  opacity: 0.1;
   filter: blur(40px);
   background:
     repeating-linear-gradient(100deg,
@@ -389,7 +389,7 @@
   position: fixed;
   inset: -20px;
   z-index: -1;
-  opacity: 0.25;
+  opacity: 0.08;
   filter: blur(60px);
   background:
     repeating-linear-gradient(100deg,
@@ -402,5 +402,4 @@
     );
   background-size: 200% 100%;
   animation: aurora-2 25s linear infinite;
-  mix-blend-mode: multiply;
 }
