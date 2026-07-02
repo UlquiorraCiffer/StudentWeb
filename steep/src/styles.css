@@ -337,7 +337,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: var(--color-canvas-white);
+    background-image:
+      radial-gradient(ellipse 70% 55% at 0% 15%, color-mix(in srgb, var(--color-card-saffron) 12%, transparent) 0%, transparent 100%),
+      radial-gradient(ellipse 60% 70% at 100% 25%, color-mix(in srgb, var(--color-card-lavender) 10%, transparent) 0%, transparent 100%),
+      radial-gradient(ellipse 65% 45% at 50% 75%, color-mix(in srgb, var(--color-card-mint) 10%, transparent) 0%, transparent 100%),
+      radial-gradient(ellipse 50% 60% at 80% 60%, color-mix(in srgb, var(--color-card-pink) 10%, transparent) 0%, transparent 100%),
+      radial-gradient(ellipse 40% 50% at 20% 85%, color-mix(in srgb, var(--color-highlight-yellow) 6%, transparent) 0%, transparent 100%),
+      radial-gradient(circle at 8px 8px, color-mix(in srgb, var(--color-highlight-yellow) 4%, transparent) 1px, transparent 0);
+    background-size: auto, 16px 16px;
+    background-attachment: fixed;
   }
   html {
     @apply font-sans;
